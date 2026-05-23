@@ -212,6 +212,14 @@ body.light .pct-atual{color:#2471a3}
 .modal-confirm:hover{opacity:.85}
 
 .footer{text-align:center;font-size:11px;color:var(--text3);padding:1.5rem;border-top:1px solid var(--footer-border);margin-top:1rem}
+
+/* COLLAPSE TOGGLE */
+.collapse-btn{display:flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer;background:var(--bg3);border:1px solid var(--border2);color:var(--text3);transition:all .2s;white-space:nowrap}
+.collapse-btn:hover{border-color:var(--gold);color:var(--gold)}
+.collapsible{overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1),opacity .25s ease}
+.collapsible.collapsed{max-height:0!important;opacity:0;pointer-events:none}
+.collapsible.expanded{opacity:1}
+
 select option{background:#1c2333;color:#e8eaf0}
 body.light select option{background:#fff;color:#1a1a2e}
 
@@ -227,7 +235,7 @@ body.light select option{background:#fff;color:#1a1a2e}
 .pdf-title{display:none;font-size:20px;font-weight:700;text-align:center;margin-bottom:1.2rem;color:#1a1a2e}
 
 /* API KEY CARD */
-.apikey-card{background:linear-gradient(135deg,rgba(66,133,244,0.08),rgba(52,168,83,0.06));border:1px solid rgba(66,133,244,0.2);border-radius:16px;padding:1.2rem 1.4rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.apikey-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:1.2rem 1.4rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
 .apikey-left{display:flex;flex-direction:column;gap:4px;flex:1;min-width:220px}
 .apikey-title{font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:7px}
 .apikey-desc{font-size:12px;color:var(--text3);line-height:1.5}
@@ -350,14 +358,20 @@ body.light .get-key-btn{color:#1a56db}
   <div class="card rec-section" id="recCard" style="display:none">
     <div class="card-title">
       <div class="card-title-left">✨ Recomendações automáticas de ativos</div>
+      <button class="collapse-btn" onclick="toggleCollapse('specRecsBody',this)">
+        <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
+        Ocultar
+      </button>
     </div>
-    <div id="specRecs"></div>
-    <div class="ai-analysis" id="aiAnalysis">
-      <div class="ai-header">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-        Análise inteligente
+    <div id="specRecsBody" class="collapsible expanded">
+      <div id="specRecs"></div>
+      <div class="ai-analysis" id="aiAnalysis">
+        <div class="ai-header">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          Análise inteligente
+        </div>
+        <div id="aiContent"></div>
       </div>
-      <div id="aiContent"></div>
     </div>
   </div>
 
@@ -369,8 +383,13 @@ body.light .get-key-btn{color:#1a56db}
         Recomendações do consultor
         <span style="font-size:10px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--text3)">— entradas e saídas manuais</span>
       </div>
+      <button class="collapse-btn" onclick="toggleCollapse('manualBody',this)">
+        <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
+        Ocultar
+      </button>
     </div>
 
+    <div id="manualBody" class="collapsible expanded">
     <!-- input rows -->
     <div class="manual-rows-wrap">
       <div class="manual-header-row">
@@ -398,6 +417,7 @@ body.light .get-key-btn{color:#1a56db}
       </div>
       <div id="pubList"></div>
     </div>
+    </div><!-- /manualBody -->
   </div>
 
 </main>
@@ -794,10 +814,16 @@ function analisar(){
     if(Math.abs(diff)<=threshold){tipo='manter';badge='badge-manter';icon='→';classesOk++;}
     else if(diff>0){tipo='alocar';badge='badge-alocar';icon='↑';totalAlocar+=diff;}
     else{tipo='retirar';badge='badge-retirar';icon='↓';totalRetirar+=Math.abs(diff);}
+    const atualPctDisp = ((byClass[cls]/total)*100).toFixed(2);
+    const alvoPctDisp  = (alvo[cls]||0);
+    const diffPp       = ((byClass[cls]/total)*100 - alvoPctDisp).toFixed(2);
+    const badgeLabel   = tipo==='manter'
+      ? `✓ Manter`
+      : `${icon} ${tipo.charAt(0).toUpperCase()+tipo.slice(1)} ${Math.abs(diffPp)} %`;
     return `<div class="rec-row ${tipo}">
       <div class="rec-dot"></div>
       <span class="rec-nome">${cls}</span>
-      <span class="rec-badge ${badge}">${icon} ${tipo.charAt(0).toUpperCase()+tipo.slice(1)}</span>
+      <span class="rec-badge ${badge}">${badgeLabel}</span>
       <span class="rec-valor ${tipo}">${diff===0?'—':(diff>0?'+':'')+fmtBRL(diff)}</span>
     </div>`;
   }).join('');
@@ -1044,6 +1070,29 @@ function enterParaProximo(e, currentInput){
   }
 }
 
+
+// ── COLLAPSE ──────────────────────────────────────────────────
+function toggleCollapse(id, btn){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const isExpanded = el.classList.contains('expanded');
+  if(isExpanded){
+    el.style.maxHeight = el.scrollHeight + 'px';
+    requestAnimationFrame(()=>{
+      el.style.maxHeight = '0';
+      el.classList.remove('expanded');
+      el.classList.add('collapsed');
+    });
+    btn.innerHTML = '<svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg> Mostrar';
+  } else {
+    el.classList.remove('collapsed');
+    el.classList.add('expanded');
+    el.style.maxHeight = el.scrollHeight + 'px';
+    setTimeout(()=>{ el.style.maxHeight = ''; }, 370);
+    btn.innerHTML = '<svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg> Ocultar';
+  }
+}
+
 function escHtml(s){
   return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
@@ -1147,7 +1196,7 @@ function escHtml(s){
 .ed-empty{font-size:13px;color:var(--text3);padding:14px;text-align:center;background:var(--input-bg);border-radius:8px}
 
 /* ── FLOAT BTN ── */
-#edFloatBtn{position:fixed;bottom:20px;right:12px;width:30x;height:30px;background:var(--gold);color:#000;border:none;border-radius:50%;font-size:22px;cursor:pointer;z-index:900;box-shadow:0 4px 18px rgba(245,200,66,.45);transition:all .2s;display:flex;align-items:center;justify-content:center}
+#edFloatBtn{position:fixed;bottom:22px;right:18px;width:46px;height:46px;background:var(--gold);color:#000;border:none;border-radius:50%;font-size:19px;cursor:pointer;z-index:900;box-shadow:0 4px 18px rgba(245,200,66,.45);transition:all .2s;display:flex;align-items:center;justify-content:center}
 #edFloatBtn:hover{transform:scale(1.1);box-shadow:0 6px 26px rgba(245,200,66,.6)}
 @media print{#edFloatBtn,#edSenhaOverlay,#edPanel,#edOverlay{display:none!important}}
 </style>
