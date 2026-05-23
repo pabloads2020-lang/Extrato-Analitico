@@ -840,44 +840,75 @@ function analisar(){
 }
 
 function renderSpecificRecs(total,byClass,alvo){
-  const recomAtivos=CARTEIRAS[perfilAtivo].ativos;
-  const clienteAtivos=ativos.filter(a=>parseValor(a.valor)>0);
-  const nomesRec=recomAtivos.map(a=>a.nome.toLowerCase());
-  let html='';
+  const recomAtivos = CARTEIRAS[perfilAtivo].ativos;
+  const clienteAtivos = ativos.filter(a=>parseValor(a.valor)>0);
+  const threshold = total * 0.005; // 0.5% tolerance
+  let html = '';
 
+  // ── SAÍDAS: ativos do cliente cujo nome NÃO aparece na carteira recomendada,
+  //    E cuja classe está acima do alvo (precisa reduzir essa classe)
   clienteAtivos.forEach(a=>{
-    const valorAtivo=parseValor(a.valor);
-    const atualPct=(byClass[a.classe]/total)*100;
-    const alvoPct=alvo[a.classe]||0;
-    const isRec=nomesRec.some(n=>n.includes(a.nome.toLowerCase().split(' ')[0])||a.nome.toLowerCase().includes(n.split(' ')[0]));
-    if(atualPct>alvoPct+2&&!isRec){
+    const valorAtivo = parseValor(a.valor);
+    const atualPct   = (byClass[a.classe] / total) * 100;
+    const alvoPct    = alvo[a.classe] || 0;
+    const classeExcedente = (byClass[a.classe] - total*(alvoPct/100)) > threshold;
+
+    // Verifica se o nome do ativo coincide com algum ativo recomendado
+    // Usa as 2 primeiras palavras para comparação mais precisa
+    const nomeCliente = a.nome.toLowerCase().trim();
+    const estaRecomendado = recomAtivos.some(rec=>{
+      const nomeRec = rec.nome.toLowerCase().trim();
+      // pega as 2 primeiras palavras de cada
+      const w1 = nomeCliente.split(' ').slice(0,2).join(' ');
+      const w2 = nomeRec.split(' ').slice(0,2).join(' ');
+      return w1===w2 || nomeRec.includes(w1) || nomeCliente.includes(w2);
+    });
+
+    if(classeExcedente && !estaRecomendado){
+      const excesso = byClass[a.classe] - total*(alvoPct/100);
+      // Sugere retirar proporcional ao excesso da classe
+      const proporcao = valorAtivo / byClass[a.classe];
+      const valSugerido = excesso * proporcao;
       html+=`<div class="spec-rec saida">
         <div class="spec-rec-icon">📤</div>
         <div class="spec-rec-body">
           <div class="spec-rec-title saida">Considerar saída — ${escHtml(a.nome)}</div>
-          <div class="spec-rec-desc">Classe ${a.classe} está ${(atualPct-alvoPct).toFixed(1)}pp acima do alvo (${atualPct.toFixed(1)}% vs ${alvoPct}% recomendado).</div>
+          <div class="spec-rec-desc">Classe ${a.classe} excede o alvo em ${(atualPct-alvoPct).toFixed(1)}pp (${atualPct.toFixed(1)}% atual vs ${alvoPct}% recomendado). Ativo não consta na carteira recomendada.</div>
         </div>
-        <div class="spec-rec-val saida">−${fmtBRL(valorAtivo)}</div>
+        <div class="spec-rec-val saida">−${fmtBRL(valSugerido)}</div>
       </div>`;
     }
   });
 
+  // ── ENTRADAS: ativos recomendados que o cliente não tem,
+  //    E cuja classe está abaixo do alvo (precisa alocar nessa classe)
   recomAtivos.forEach(rec=>{
-    const tem=clienteAtivos.some(a=>a.nome.toLowerCase().includes(rec.nome.toLowerCase().split(' ')[0]));
-    if(!tem&&(alvo[rec.classe]||0)>0){
-      const valSug=total*(rec.peso/100);
+    const alvoPct  = alvo[rec.classe] || 0;
+    const atualPct = (byClass[rec.classe] / total) * 100;
+    const classeDeficitaria = (total*(alvoPct/100) - byClass[rec.classe]) > threshold;
+
+    const nomeRec = rec.nome.toLowerCase().trim();
+    const clienteTemAtivo = clienteAtivos.some(a=>{
+      const nomeCliente = a.nome.toLowerCase().trim();
+      const w1 = nomeRec.split(' ').slice(0,2).join(' ');
+      const w2 = nomeCliente.split(' ').slice(0,2).join(' ');
+      return w1===w2 || nomeCliente.includes(w1) || nomeRec.includes(w2);
+    });
+
+    if(!clienteTemAtivo && classeDeficitaria){
+      const valSug = total * (rec.peso / 100);
       html+=`<div class="spec-rec entrada">
         <div class="spec-rec-icon">📥</div>
         <div class="spec-rec-body">
           <div class="spec-rec-title entrada">Entrada sugerida — ${escHtml(rec.nome)}</div>
-          <div class="spec-rec-desc">Carteira recomendada ${perfilAtivo} · ${rec.classe} · Peso sugerido ${rec.peso}%</div>
+          <div class="spec-rec-desc">Carteira recomendada ${perfilAtivo} · ${rec.classe} · Peso sugerido ${rec.peso}% · Classe com déficit de ${(alvoPct-atualPct).toFixed(1)}pp</div>
         </div>
         <div class="spec-rec-val entrada">+${fmtBRL(valSug)}</div>
       </div>`;
     }
   });
 
-  if(!html)html=`<div style="color:var(--text3);font-size:13px;padding:8px 0">Carteira já bem alinhada com a recomendação para perfil ${perfilAtivo}.</div>`;
+  if(!html) html=`<div style="color:var(--text3);font-size:13px;padding:8px 0">Carteira já bem alinhada com a recomendação para perfil ${perfilAtivo}.</div>`;
   document.getElementById('specRecs').innerHTML=html;
 }
 
