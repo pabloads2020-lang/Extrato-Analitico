@@ -842,75 +842,111 @@ function analisar(){
 function renderSpecificRecs(total,byClass,alvo){
   const recomAtivos = CARTEIRAS[perfilAtivo].ativos;
   const clienteAtivos = ativos.filter(a=>parseValor(a.valor)>0);
-  const threshold = total * 0.005; // 0.5% tolerance
   let html = '';
 
-  // ── SAÍDAS: ativos do cliente cujo nome NÃO aparece na carteira recomendada,
-  //    E cuja classe está acima do alvo (precisa reduzir essa classe)
+  // ── helper: verifica se dois nomes de ativo se referem ao mesmo produto
+  function mesmoAtivo(nomeA, nomeB){
+    const norm = s => s.toLowerCase().trim()
+      .replace(/[^a-z0-9À-ž\s]/g,'')
+      .split(/\s+/).slice(0,3).join(' ');
+    const a = norm(nomeA), b = norm(nomeB);
+    return a===b || a.includes(b) || b.includes(a);
+  }
+
+  // ── Para cada ativo do cliente, tenta casar com um ativo recomendado
   clienteAtivos.forEach(a=>{
     const valorAtivo = parseValor(a.valor);
-    const atualPct   = (byClass[a.classe] / total) * 100;
-    const alvoPct    = alvo[a.classe] || 0;
-    const classeExcedente = (byClass[a.classe] - total*(alvoPct/100)) > threshold;
+    const pctCliente = (valorAtivo / total) * 100;
 
-    // Verifica se o nome do ativo coincide com algum ativo recomendado
-    // Usa as 2 primeiras palavras para comparação mais precisa
-    const nomeCliente = a.nome.toLowerCase().trim();
-    const estaRecomendado = recomAtivos.some(rec=>{
-      const nomeRec = rec.nome.toLowerCase().trim();
-      // pega as 2 primeiras palavras de cada
-      const w1 = nomeCliente.split(' ').slice(0,2).join(' ');
-      const w2 = nomeRec.split(' ').slice(0,2).join(' ');
-      return w1===w2 || nomeRec.includes(w1) || nomeCliente.includes(w2);
-    });
+    // Tenta achar o ativo correspondente na recomendação
+    const match = recomAtivos.find(r=> mesmoAtivo(a.nome, r.nome));
 
-    if(classeExcedente && !estaRecomendado){
-      const excesso = byClass[a.classe] - total*(alvoPct/100);
-      // Sugere retirar proporcional ao excesso da classe
-      const proporcao = valorAtivo / byClass[a.classe];
-      const valSugerido = excesso * proporcao;
-      html+=`<div class="spec-rec saida">
+    if(match){
+      // Ativo existe nos dois lados — compara percentuais
+      const pctRec   = match.peso;
+      const diffPct  = pctCliente - pctRec;          // positivo = excesso
+      const diffBRL  = (diffPct / 100) * total;      // R$ a mover
+      const absTol   = 0.5;                          // tolerância de 0.5pp
+
+      if(Math.abs(diffPct) <= absTol) return;        // dentro da margem, ignora
+
+      if(diffPct > 0){
+        // Cliente tem mais do que o recomendado → SAÍDA parcial
+        html += `<div class="spec-rec saida">
+          <div class="spec-rec-icon">📤</div>
+          <div class="spec-rec-body">
+            <div class="spec-rec-title saida">Reduzir posição — ${escHtml(a.nome)}</div>
+            <div class="spec-rec-desc">
+              Cliente: <strong>${pctCliente.toFixed(2)}%</strong> ·
+              Recomendado: <strong>${pctRec.toFixed(2)}%</strong> ·
+              Excesso: <strong>+${diffPct.toFixed(2)}pp</strong>
+            </div>
+          </div>
+          <div class="spec-rec-val saida">−${fmtBRL(Math.abs(diffBRL))}</div>
+        </div>`;
+      } else {
+        // Cliente tem menos do que o recomendado → ENTRADA complementar
+        html += `<div class="spec-rec entrada">
+          <div class="spec-rec-icon">📥</div>
+          <div class="spec-rec-body">
+            <div class="spec-rec-title entrada">Aumentar posição — ${escHtml(a.nome)}</div>
+            <div class="spec-rec-desc">
+              Cliente: <strong>${pctCliente.toFixed(2)}%</strong> ·
+              Recomendado: <strong>${pctRec.toFixed(2)}%</strong> ·
+              Déficit: <strong>${diffPct.toFixed(2)}pp</strong>
+            </div>
+          </div>
+          <div class="spec-rec-val entrada">+${fmtBRL(Math.abs(diffBRL))}</div>
+        </div>`;
+      }
+    } else {
+      // Ativo NÃO consta na recomendação → SAÍDA TOTAL
+      const atualClasse    = (byClass[a.classe] / total) * 100;
+      const alvoClasse     = alvo[a.classe] || 0;
+      const classeExcede   = atualClasse > alvoClasse + 0.5;
+
+      html += `<div class="spec-rec saida">
         <div class="spec-rec-icon">📤</div>
         <div class="spec-rec-body">
           <div class="spec-rec-title saida">Considerar saída — ${escHtml(a.nome)}</div>
-          <div class="spec-rec-desc">Classe ${a.classe} excede o alvo em ${(atualPct-alvoPct).toFixed(1)}pp (${atualPct.toFixed(1)}% atual vs ${alvoPct}% recomendado). Ativo não consta na carteira recomendada.</div>
+          <div class="spec-rec-desc">
+            Ativo não consta na carteira recomendada para perfil ${perfilAtivo}.${classeExcede
+              ? ` Classe ${a.classe} está ${(atualClasse-alvoClasse).toFixed(1)}pp acima do alvo (${atualClasse.toFixed(1)}% vs ${alvoClasse}% recomendado).`
+              : ` Classe ${a.classe}: ${atualClasse.toFixed(1)}% atual vs ${alvoClasse}% recomendado.`}
+          </div>
         </div>
-        <div class="spec-rec-val saida">−${fmtBRL(valSugerido)}</div>
+        <div class="spec-rec-val saida">−${fmtBRL(valorAtivo)}</div>
       </div>`;
     }
   });
 
-  // ── ENTRADAS: ativos recomendados que o cliente não tem,
-  //    E cuja classe está abaixo do alvo (precisa alocar nessa classe)
+  // ── Ativos recomendados que o cliente NÃO tem → ENTRADA do zero
   recomAtivos.forEach(rec=>{
-    const alvoPct  = alvo[rec.classe] || 0;
-    const atualPct = (byClass[rec.classe] / total) * 100;
-    const classeDeficitaria = (total*(alvoPct/100) - byClass[rec.classe]) > threshold;
+    const pctRec  = rec.peso;
+    const alvoPct = alvo[rec.classe] || 0;
+    if(alvoPct === 0) return; // classe com alvo 0 — não empurra entrada
 
-    const nomeRec = rec.nome.toLowerCase().trim();
-    const clienteTemAtivo = clienteAtivos.some(a=>{
-      const nomeCliente = a.nome.toLowerCase().trim();
-      const w1 = nomeRec.split(' ').slice(0,2).join(' ');
-      const w2 = nomeCliente.split(' ').slice(0,2).join(' ');
-      return w1===w2 || nomeCliente.includes(w1) || nomeRec.includes(w2);
-    });
-
-    if(!clienteTemAtivo && classeDeficitaria){
-      const valSug = total * (rec.peso / 100);
-      html+=`<div class="spec-rec entrada">
+    const clienteTemEsse = clienteAtivos.some(a=> mesmoAtivo(a.nome, rec.nome));
+    if(!clienteTemEsse){
+      const valSug = total * (pctRec / 100);
+      html += `<div class="spec-rec entrada">
         <div class="spec-rec-icon">📥</div>
         <div class="spec-rec-body">
           <div class="spec-rec-title entrada">Entrada sugerida — ${escHtml(rec.nome)}</div>
-          <div class="spec-rec-desc">Carteira recomendada ${perfilAtivo} · ${rec.classe} · Peso sugerido ${rec.peso}% · Classe com déficit de ${(alvoPct-atualPct).toFixed(1)}pp</div>
+          <div class="spec-rec-desc">
+            Não encontrado na carteira do cliente ·
+            ${rec.classe} · Peso recomendado: <strong>${pctRec}%</strong>
+          </div>
         </div>
         <div class="spec-rec-val entrada">+${fmtBRL(valSug)}</div>
       </div>`;
     }
   });
 
-  if(!html) html=`<div style="color:var(--text3);font-size:13px;padding:8px 0">Carteira já bem alinhada com a recomendação para perfil ${perfilAtivo}.</div>`;
-  document.getElementById('specRecs').innerHTML=html;
+  if(!html) html = `<div style="color:var(--text3);font-size:13px;padding:8px 0">Carteira já bem alinhada com a recomendação para perfil ${perfilAtivo}.</div>`;
+  document.getElementById('specRecs').innerHTML = html;
 }
+
 
 async function callAI(total,byClass,alvo){
   const aiContent=document.getElementById('aiContent');
@@ -1227,7 +1263,7 @@ function escHtml(s){
 .ed-empty{font-size:13px;color:var(--text3);padding:14px;text-align:center;background:var(--input-bg);border-radius:8px}
 
 /* ── FLOAT BTN ── */
-#edFloatBtn{position:fixed;bottom:20px;right:15px;width:32px;height:32px;background:var(--gold);color:#000;border:none;border-radius:50%;font-size:18px;cursor:pointer;z-index:900;box-shadow:0 4px 18px rgba(245,200,66,.45);transition:all .2s;display:flex;align-items:center;justify-content:center}
+#edFloatBtn{position:fixed;bottom:18px;right:15px;width:30px;height:30px;background:var(--gold);color:#000;border:none;border-radius:50%;font-size:19px;cursor:pointer;z-index:900;box-shadow:0 4px 18px rgba(245,200,66,.45);transition:all .2s;display:flex;align-items:center;justify-content:center}
 #edFloatBtn:hover{transform:scale(1.1);box-shadow:0 6px 26px rgba(245,200,66,.6)}
 @media print{#edFloatBtn,#edSenhaOverlay,#edPanel,#edOverlay{display:none!important}}
 </style>
