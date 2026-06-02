@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<html lang="pt-br"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Analisador de Carteira · Recomendações</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;family=Atkinson+Hyperlegible:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:#0e1117;--bg2:#161b25;--bg3:#1c2333;
@@ -262,17 +261,17 @@ body.light .get-key-btn{color:#1a56db}
     Analisador de Carteira
   </div>
   <div class="header-right">
-    <div class="header-date" id="hDate"></div>
+    <div class="header-date" id="hDate">02 de jun. de 2026</div>
     <button class="icon-btn pdf-btn" id="pdfBtn" title="Exportar PDF" style="display:none">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
       Exportar PDF
     </button>
     <button class="icon-btn" id="xlsxBtn" style="display:none;background:rgba(33,155,94,0.12);border-color:rgba(33,155,94,0.4);color:#27ae60" title="Exportar Excel">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M8 8l8 8M16 8l-8 8"></path></svg>
       Exportar Excel
     </button>
     <button class="icon-btn danger" id="limparBtn">
-      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
       Limpar
     </button>
     <button class="icon-btn" id="themeToggle" title="Alternar tema">🌙</button>
@@ -283,24 +282,24 @@ body.light .get-key-btn{color:#1a56db}
   <div class="pdf-title" id="pdfTitle"></div>
 
   <!-- PERFIS -->
-  <div class="perfis-row" id="perfisRow"></div>
+  <div class="perfis-row" id="perfisRow"><button class="perfil-btn " data-perfil="Conservador">🛡️ Conservador</button><button class="perfil-btn ativo" data-perfil="Moderado">⚖️ Moderado</button><button class="perfil-btn " data-perfil="Agressivo">🚀 Agressivo</button></div>
 
   <!-- API KEY -->
   <div class="apikey-card">
     <div class="apikey-left">
       <div class="apikey-title">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
         Chave de API · Google Gemini
       </div>
       <div class="apikey-desc">Necessária para a análise inteligente. Fica salva só nesta aba do navegador.</div>
     </div>
     <div class="apikey-input-wrap">
-      <input class="apikey-input" id="apikeyInput" type="password" placeholder="Cole sua chave aqui (AIza...)">
+      <input class="apikey-input ok" id="apikeyInput" type="password" placeholder="Cole sua chave aqui (AIza...)">
       <button class="apikey-toggle" id="apikeyToggle" title="Mostrar/ocultar">👁</button>
-      <span class="apikey-status unset" id="apikeyStatus">Sem chave</span>
+      <span class="apikey-status set" id="apikeyStatus">✓ Chave definida</span>
     </div>
     <a class="get-key-btn" href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"></path></svg>
       Criar chave grátis
     </a>
   </div>
@@ -315,7 +314,7 @@ body.light .get-key-btn{color:#1a56db}
       </div>
       <div class="client-field">
         <span class="client-label">Perfil selecionado</span>
-        <input class="client-input" id="clientPerfil" value="Moderado" readonly style="cursor:default;min-width:130px;color:var(--gold)">
+        <input class="client-input" id="clientPerfil" value="Moderado" readonly="" style="cursor:default;min-width:130px;color:var(--gold)">
       </div>
       <div class="patrimonio-tag">💰 <span id="patrimVal">R$ 0,00</span></div>
     </div>
@@ -326,12 +325,12 @@ body.light .get-key-btn{color:#1a56db}
     <div class="card-title"><div class="card-title-left">📋 Ativos do cliente <span style="font-size:10px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--text3)">— adicione e classifique</span></div></div>
     <div class="ativos-list" id="ativosList"></div>
     <button class="add-ativo-btn" id="addAtivoBtn">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
       Adicionar ativo
     </button>
     <div class="analisar-area">
       <button class="analisar-btn" id="analisarBtn">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
         Analisar rebalanceamento
       </button>
     </div>
@@ -359,7 +358,7 @@ body.light .get-key-btn{color:#1a56db}
     <div class="card-title">
       <div class="card-title-left">✨ Recomendações automáticas de ativos</div>
       <button class="collapse-btn" onclick="toggleCollapse('specRecsBody',this)">
-        <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
+        <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"></path></svg>
         Ocultar
       </button>
     </div>
@@ -367,7 +366,7 @@ body.light .get-key-btn{color:#1a56db}
       <div id="specRecs"></div>
       <div class="ai-analysis" id="aiAnalysis">
         <div class="ai-header">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
           Análise inteligente
         </div>
         <div id="aiContent"></div>
@@ -379,12 +378,12 @@ body.light .get-key-btn{color:#1a56db}
   <div class="card">
     <div class="card-title">
       <div class="card-title-left">
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
         Recomendações do consultor
         <span style="font-size:10px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--text3)">— entradas e saídas manuais</span>
       </div>
       <button class="collapse-btn" onclick="toggleCollapse('manualBody',this)">
-        <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
+        <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"></path></svg>
         Ocultar
       </button>
     </div>
@@ -403,7 +402,7 @@ body.light .get-key-btn{color:#1a56db}
     </div>
     <div class="add-manual-btn-wrap">
       <button class="add-ativo-btn" id="addManualBtn">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
         Adicionar recomendação
       </button>
     </div>
@@ -412,7 +411,7 @@ body.light .get-key-btn{color:#1a56db}
     <div id="pubSection" style="display:none">
       <div class="pub-sep"></div>
       <div class="pub-label">
-        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
         Recomendações registradas
       </div>
       <div id="pubList"></div>
@@ -439,49 +438,205 @@ body.light .get-key-btn{color:#1a56db}
 <script>
 // ── CARTEIRAS ────────────────────────────────────────────────
 const CARTEIRAS = {
-  Conservador:{
-    classes:{"Prefixado":15,"Pós-fixado":85,"Inflação":0,"Multimercado":0,"Renda Variável":0,"Renda Fixa Global":0,"Renda Variável Global":0},
-    ativos:[
-      {nome:"CDB 2 anos / LCI e LCA #feed #pré",classe:"Prefixado",peso:15},
-      {nome:"ARX Fuji FIC de FIF RF CP RL",classe:"Pós-fixado",peso:15},
-      {nome:"SulAmérica Crédito Ativo FIRF CP LP",classe:"Pós-fixado",peso:24},
-      {nome:"Compass Yield 30 FIF RF CP LP RL",classe:"Pós-fixado",peso:8},
-      {nome:"LCI/LCA - até 1 ano - 92% CDI",classe:"Pós-fixado",peso:20},
-      {nome:"Valora Vanguard FIC de FIDC RL",classe:"Pós-fixado",peso:7},
-      {nome:"XP Liquidez FIC RF REF DI CP RL",classe:"Pós-fixado",peso:11}
+  "Conservador": {
+    "classes": {
+      "Prefixado": 15,
+      "Pós-fixado": 85,
+      "Inflação": 0,
+      "Multimercado": 0,
+      "Renda Variável": 0,
+      "Renda Fixa Global": 0,
+      "Renda Variável Global": 0
+    },
+    "ativos": [
+      {
+        "nome": "CDB 2 anos / LCI e LCA #feed #pré",
+        "classe": "Prefixado",
+        "peso": 15
+      },
+      {
+        "nome": "ARX Fuji FIC de FIF RF CP RL",
+        "classe": "Pós-fixado",
+        "peso": 15
+      },
+      {
+        "nome": "SulAmérica Crédito Ativo FIRF CP LP",
+        "classe": "Pós-fixado",
+        "peso": 24
+      },
+      {
+        "nome": "Compass Yield 30 FIF RF CP LP RL",
+        "classe": "Pós-fixado",
+        "peso": 8
+      },
+      {
+        "nome": "LCI/LCA - até 1 ano - 92% CDI",
+        "classe": "Pós-fixado",
+        "peso": 20
+      },
+      {
+        "nome": "Valora Vanguard FIC de FIDC RL",
+        "classe": "Pós-fixado",
+        "peso": 7
+      },
+      {
+        "nome": "XP Liquidez FIC RF REF DI CP RL",
+        "classe": "Pós-fixado",
+        "peso": 11
+      }
     ]
   },
-  Moderado:{
-    classes:{"Prefixado":13,"Pós-fixado":58,"Inflação":20,"Multimercado":5,"Renda Variável":4,"Renda Fixa Global":0,"Renda Variável Global":0},
-    ativos:[
-      {nome:"CDB 2 anos / LCI e LCA #feed #pré",classe:"Prefixado",peso:13},
-      {nome:"ARX Fuji FIC de FIF RF CP RL",classe:"Pós-fixado",peso:13},
-      {nome:"SulAmérica Crédito Ativo FIRF CP LP",classe:"Pós-fixado",peso:14},
-      {nome:"Compass Yield 30 FIF RF CP LP RL",classe:"Pós-fixado",peso:8},
-      {nome:"XP Liquidez FIC RF REF DI CP RL",classe:"Pós-fixado",peso:16},
-      {nome:"Valora Vanguard FIC de FIDC RL",classe:"Pós-fixado",peso:7},
-      {nome:"Trend Inflação Geral FIRF LP",classe:"Inflação",peso:4},
-      {nome:"NTN-B 2035",classe:"Inflação",peso:16},
-      {nome:"ACE Capital Advisory FIC FIM",classe:"Multimercado",peso:2.5},
-      {nome:"Kapitalo K10 Advisory FIC FIM",classe:"Multimercado",peso:2.5},
-      {nome:"Real Investor FIC FIA BDR Nível I",classe:"Renda Variável",peso:2},
-      {nome:"NDIV11 / NSDV11",classe:"Renda Variável",peso:2}
+  "Moderado": {
+    "classes": {
+      "Prefixado": 13,
+      "Pós-fixado": 58,
+      "Inflação": 20,
+      "Multimercado": 5,
+      "Renda Variável": 4,
+      "Renda Fixa Global": 0,
+      "Renda Variável Global": 0
+    },
+    "ativos": [
+      {
+        "nome": "CDB 2 anos / LCI e LCA #feed #pré",
+        "classe": "Prefixado",
+        "peso": 13
+      },
+      {
+        "nome": "ARX Fuji FIC de FIF RF CP RL",
+        "classe": "Pós-fixado",
+        "peso": 13
+      },
+      {
+        "nome": "SulAmérica Crédito Ativo FIRF CP LP",
+        "classe": "Pós-fixado",
+        "peso": 14
+      },
+      {
+        "nome": "Compass Yield 30 FIF RF CP LP RL",
+        "classe": "Pós-fixado",
+        "peso": 8
+      },
+      {
+        "nome": "XP Liquidez FIC RF REF DI CP RL",
+        "classe": "Pós-fixado",
+        "peso": 16
+      },
+      {
+        "nome": "Valora Vanguard FIC de FIDC RL",
+        "classe": "Pós-fixado",
+        "peso": 7
+      },
+      {
+        "nome": "Trend Inflação Geral FIRF LP",
+        "classe": "Inflação",
+        "peso": 4
+      },
+      {
+        "nome": "NTN-B 2035",
+        "classe": "Inflação",
+        "peso": 10
+      },
+      {
+        "nome": "ACE Capital Advisory FIC FIM",
+        "classe": "Multimercado",
+        "peso": 2.5
+      },
+      {
+        "nome": "Kapitalo K10 Advisory FIC FIM",
+        "classe": "Multimercado",
+        "peso": 2.5
+      },
+      {
+        "nome": "Real Investor FIC FIA BDR Nível I",
+        "classe": "Renda Variável",
+        "peso": 2
+      },
+      {
+        "nome": "NDIV11 / NSDV11",
+        "classe": "Renda Variável",
+        "peso": 2
+      },
+      {
+        "nome": "Itaú Debêntures Incentivadas FIF CIC em Infra RF CP RL",
+        "classe": "Inflação",
+        "peso": 6,
+        "link": null
+      }
     ]
   },
-  Agressivo:{
-    classes:{"Prefixado":15,"Pós-fixado":50,"Inflação":24,"Multimercado":5,"Renda Variável":6,"Renda Fixa Global":0,"Renda Variável Global":0},
-    ativos:[
-      {nome:"CDB 2 anos / LCI e LCA #feed #pré",classe:"Prefixado",peso:15},
-      {nome:"Compass Yield 30 FIF RF CP LP RL",classe:"Pós-fixado",peso:8},
-      {nome:"ARX Fuji FIC de FIF RF CP RL",classe:"Pós-fixado",peso:8},
-      {nome:"Valora Vanguard FIC de FIDC RL",classe:"Pós-fixado",peso:10},
-      {nome:"SulAmérica Crédito Ativo FIRF CP LP",classe:"Pós-fixado",peso:10},
-      {nome:"XP Liquidez FIC RF REF DI CP RL",classe:"Pós-fixado",peso:14},
-      {nome:"NTN-B 2035",classe:"Inflação",peso:24},
-      {nome:"ACE Capital Advisory FIC FIM",classe:"Multimercado",peso:2.5},
-      {nome:"Kapitalo K10 Advisory FIC FIM",classe:"Multimercado",peso:2.5},
-      {nome:"Real Investor FIC FIA BDR Nível I",classe:"Renda Variável",peso:3},
-      {nome:"NDIV11 / NSDV11",classe:"Renda Variável",peso:3}
+  "Agressivo": {
+    "classes": {
+      "Prefixado": 15,
+      "Pós-fixado": 50,
+      "Inflação": 24,
+      "Multimercado": 5,
+      "Renda Variável": 6,
+      "Renda Fixa Global": 0,
+      "Renda Variável Global": 0
+    },
+    "ativos": [
+      {
+        "nome": "CDB 2 anos / LCI e LCA #feed #pré",
+        "classe": "Prefixado",
+        "peso": 15
+      },
+      {
+        "nome": "Compass Yield 30 FIF RF CP LP RL",
+        "classe": "Pós-fixado",
+        "peso": 8
+      },
+      {
+        "nome": "ARX Fuji FIC de FIF RF CP RL",
+        "classe": "Pós-fixado",
+        "peso": 8
+      },
+      {
+        "nome": "Valora Vanguard FIC de FIDC RL",
+        "classe": "Pós-fixado",
+        "peso": 10
+      },
+      {
+        "nome": "SulAmérica Crédito Ativo FIRF CP LP",
+        "classe": "Pós-fixado",
+        "peso": 10
+      },
+      {
+        "nome": "XP Liquidez FIC RF REF DI CP RL",
+        "classe": "Pós-fixado",
+        "peso": 14
+      },
+      {
+        "nome": "NTN-B 2035",
+        "classe": "Inflação",
+        "peso": 16
+      },
+      {
+        "nome": "ACE Capital Advisory FIC FIM",
+        "classe": "Multimercado",
+        "peso": 2.5
+      },
+      {
+        "nome": "Kapitalo K10 Advisory FIC FIM",
+        "classe": "Multimercado",
+        "peso": 2.5
+      },
+      {
+        "nome": "Real Investor FIC FIA BDR Nível I",
+        "classe": "Renda Variável",
+        "peso": 3
+      },
+      {
+        "nome": "NDIV11 / NSDV11",
+        "classe": "Renda Variável",
+        "peso": 3
+      },
+      {
+        "nome": "JURO11",
+        "classe": "Inflação",
+        "peso": 8,
+        "link": null
+      }
     ]
   }
 };
@@ -1164,13 +1319,10 @@ function escHtml(s){
   return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 </script>
-</body>
-</html>
 
-<!-- ═══════════════════════════════════════════════════════════
-     GERENCIADOR DE CARTEIRAS — ÁREA RESTRITA
-     Senha padrão: carteiras2025
-═══════════════════════════════════════════════════════════ -->
+
+
+
 <style>
 /* ── MODAL SENHA ── */
 #edSenhaOverlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:1100;backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center}
@@ -1269,7 +1421,7 @@ function escHtml(s){
 </style>
 
 <!-- MODAL SENHA -->
-<div id="edSenhaOverlay">
+<div id="edSenhaOverlay" class="">
   <div class="ed-senha-card">
     <div class="ed-senha-icon">🔒</div>
     <div class="ed-senha-title">Área restrita</div>
@@ -1278,7 +1430,7 @@ function escHtml(s){
       <input class="ed-senha-input" id="edSenhaInput" type="password" placeholder="Senha">
       <button class="ed-eye" id="edEyeBtn">👁</button>
     </div>
-    <div class="ed-senha-err" id="edSenhaErr">Senha incorreta. Tente novamente.</div>
+    <div class="ed-senha-err" id="edSenhaErr" style="display: none;">Senha incorreta. Tente novamente.</div>
     <div class="ed-senha-btns">
       <button class="ed-btn-cancel" id="edBtnCancelar">Cancelar</button>
       <button class="ed-btn-enter" id="edBtnEntrar">Entrar</button>
@@ -1287,15 +1439,15 @@ function escHtml(s){
 </div>
 
 <!-- OVERLAY -->
-<div id="edOverlay"></div>
+<div id="edOverlay" style="display: none;"></div>
 
 <!-- PAINEL LATERAL -->
-<div id="edPanel">
+<div id="edPanel" class="">
   <div class="ed-panel-header">
     <div class="ed-panel-title">✏️ Editor de Carteiras</div>
     <div class="ed-panel-actions">
       <button class="ed-export-btn" id="edExportBtn">
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
         Exportar HTML
       </button>
       <button class="ed-close-btn" id="edBtnFechar">×</button>
@@ -1303,19 +1455,426 @@ function escHtml(s){
   </div>
   <div class="ed-body">
     <div class="ed-info">Edite e clique em <strong>Exportar HTML</strong> para salvar. As mudanças refletem no analisador em tempo real.</div>
-    <div class="ed-perfil-row" id="edPerfilRow"></div>
+    <div class="ed-perfil-row" id="edPerfilRow"><button class="ed-perfil-btn" data-p="Conservador">🛡️ Conservador</button><button class="ed-perfil-btn" data-p="Moderado">⚖️ Moderado</button><button class="ed-perfil-btn ativo" data-p="Agressivo">🚀 Agressivo</button></div>
     <div class="ed-sec" style="margin-bottom:.5rem">Alocação por classe (%)</div>
-    <div class="ed-classes-grid" id="edClassesGrid"></div>
+    <div class="ed-classes-grid" id="edClassesGrid">
+      <div class="ed-class-row">
+        <span class="ed-class-label">Prefixado</span>
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="15" data-cls="Prefixado">
+        <span class="ed-pct-lbl">%</span>
+      </div>
+      <div class="ed-class-row">
+        <span class="ed-class-label">Pós-fixado</span>
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="50" data-cls="Pós-fixado">
+        <span class="ed-pct-lbl">%</span>
+      </div>
+      <div class="ed-class-row">
+        <span class="ed-class-label">Inflação</span>
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="24" data-cls="Inflação">
+        <span class="ed-pct-lbl">%</span>
+      </div>
+      <div class="ed-class-row">
+        <span class="ed-class-label">Multimercado</span>
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="5" data-cls="Multimercado">
+        <span class="ed-pct-lbl">%</span>
+      </div>
+      <div class="ed-class-row">
+        <span class="ed-class-label">Renda Variável</span>
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="6" data-cls="Renda Variável">
+        <span class="ed-pct-lbl">%</span>
+      </div>
+      <div class="ed-class-row">
+        <span class="ed-class-label">Renda Fixa Global</span>
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="0" data-cls="Renda Fixa Global">
+        <span class="ed-pct-lbl">%</span>
+      </div>
+      <div class="ed-class-row">
+        <span class="ed-class-label">Renda Variável Global</span>
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="0" data-cls="Renda Variável Global">
+        <span class="ed-pct-lbl">%</span>
+      </div><div class="ed-total-row"><span>Total</span><span class="ed-total-val ok" id="edTotalVal">100% ✓</span></div></div>
     <div class="ed-sec" id="edSecAtivos">
       <span>Ativos da carteira</span>
       <button class="ed-add-btn gold" id="edBtnAddAtivo">+ Adicionar ativo</button>
     </div>
-    <div id="edAtivosContainer" style="margin-bottom:1.2rem"></div>
+    <div id="edAtivosContainer" style="margin-bottom:1.2rem">
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="0" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="0" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="CDB 2 anos / LCI e LCA #feed #pré" data-action="nome" data-idx="0" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="0" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="0" data-prev="0">
+              <option value="Prefixado" selected="">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="15" data-action="peso" data-idx="0" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="1" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="1" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="Compass Yield 30 FIF RF CP LP RL" data-action="nome" data-idx="1" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="1" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="1" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="1" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="2" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="2" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="ARX Fuji FIC de FIF RF CP RL" data-action="nome" data-idx="2" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="2" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="2" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="2" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="3" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="3" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="Valora Vanguard FIC de FIDC RL" data-action="nome" data-idx="3" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="3" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="3" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="3" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="4" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="4" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="SulAmérica Crédito Ativo FIRF CP LP" data-action="nome" data-idx="4" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="4" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="4" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="4" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="5" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="5" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="XP Liquidez FIC RF REF DI CP RL" data-action="nome" data-idx="5" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="5" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="5" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="14" data-action="peso" data-idx="5" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="6" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="6" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="NTN-B 2035" data-action="nome" data-idx="6" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="6" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="6" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="24" data-action="peso" data-idx="6" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="7" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="7" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="ACE Capital Advisory FIC FIM" data-action="nome" data-idx="7" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="7" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="7" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado" selected="">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="7" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="8" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="8" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="Kapitalo K10 Advisory FIC FIM" data-action="nome" data-idx="8" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="8" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="8" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado" selected="">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="8" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="9" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="9" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="Real Investor FIC FIA BDR Nível I" data-action="nome" data-idx="9" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="9" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="9" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável" selected="">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="3" data-action="peso" data-idx="9" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="10" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="10" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="NDIV11 / NSDV11" data-action="nome" data-idx="10" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="10" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="10" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável" selected="">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="3" data-action="peso" data-idx="10" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="11" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="11" data-prev="0">🗑 remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="Novo ativo" data-action="nome" data-idx="11" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="11" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="11" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="0" data-action="peso" data-idx="11" data-prev="0">
+          </div>
+        </div>
+      </div></div>
     <div class="ed-sec" id="edSecPrev">
       <span>Previdência</span>
       <button class="ed-add-btn blue" id="edBtnAddPrev">+ Adicionar</button>
     </div>
-    <div id="edPrevContainer" style="margin-bottom:2.5rem"></div>
+    <div id="edPrevContainer" style="margin-bottom:2.5rem"><div class="ed-empty">Nenhum ativo cadastrado</div></div>
   </div>
 </div>
 
@@ -1645,3 +2204,4 @@ function escHtml(s){
 
 })(); // fim IIFE
 </script>
+</body></html>
