@@ -261,7 +261,7 @@ body.light .get-key-btn{color:#1a56db}
     Analisador de Carteira
   </div>
   <div class="header-right">
-    <div class="header-date" id="hDate">02 de jun. de 2026</div>
+    <div class="header-date" id="hDate">09 de jun. de 2026</div>
     <button class="icon-btn pdf-btn" id="pdfBtn" title="Exportar PDF" style="display:none">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
       Exportar PDF
@@ -489,10 +489,10 @@ const CARTEIRAS = {
   "Moderado": {
     "classes": {
       "Prefixado": 13,
-      "Pós-fixado": 58,
+      "Pós-fixado": 56,
       "Inflação": 20,
       "Multimercado": 5,
-      "Renda Variável": 4,
+      "Renda Variável": 6,
       "Renda Fixa Global": 0,
       "Renda Variável Global": 0
     },
@@ -520,7 +520,7 @@ const CARTEIRAS = {
       {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
         "classe": "Pós-fixado",
-        "peso": 16
+        "peso": 14
       },
       {
         "nome": "Valora Vanguard FIC de FIDC RL",
@@ -550,12 +550,12 @@ const CARTEIRAS = {
       {
         "nome": "Real Investor FIC FIA BDR Nível I",
         "classe": "Renda Variável",
-        "peso": 2
+        "peso": 3
       },
       {
         "nome": "NDIV11 / NSDV11",
         "classe": "Renda Variável",
-        "peso": 2
+        "peso": 3
       },
       {
         "nome": "Itaú Debêntures Incentivadas FIF CIC em Infra RF CP RL",
@@ -568,10 +568,10 @@ const CARTEIRAS = {
   "Agressivo": {
     "classes": {
       "Prefixado": 15,
-      "Pós-fixado": 50,
+      "Pós-fixado": 46,
       "Inflação": 24,
       "Multimercado": 5,
-      "Renda Variável": 6,
+      "Renda Variável": 10,
       "Renda Fixa Global": 0,
       "Renda Variável Global": 0
     },
@@ -604,7 +604,7 @@ const CARTEIRAS = {
       {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
         "classe": "Pós-fixado",
-        "peso": 14
+        "peso": 10
       },
       {
         "nome": "NTN-B 2035",
@@ -624,12 +624,12 @@ const CARTEIRAS = {
       {
         "nome": "Real Investor FIC FIA BDR Nível I",
         "classe": "Renda Variável",
-        "peso": 3
+        "peso": 5
       },
       {
         "nome": "NDIV11 / NSDV11",
         "classe": "Renda Variável",
-        "peso": 3
+        "peso": 5
       },
       {
         "nome": "JURO11",
@@ -1711,7 +1711,7 @@ function escHtml(s){
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="24" data-action="peso" data-idx="6" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="16" data-action="peso" data-idx="6" data-prev="0">
           </div>
         </div>
       </div>
@@ -1851,7 +1851,7 @@ function escHtml(s){
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Novo ativo" data-action="nome" data-idx="11" data-prev="0">
+            <input class="ed-input" type="text" value="JURO11" data-action="nome" data-idx="11" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1861,12 +1861,12 @@ function escHtml(s){
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="11" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="0" data-action="peso" data-idx="11" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="11" data-prev="0">
           </div>
         </div>
       </div></div>
