@@ -6,6 +6,48 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;family=Atkinson+Hyperlegible:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,1" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
+/* ── MODAL XPERFORMANCE ── */
+#xpModal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;}
+#xpModal.open{display:flex;}
+.xp-modal-box{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:28px;width:min(520px,94vw);max-height:88vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,0.5);}
+.xp-modal-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.xp-modal-sub{font-size:12px;color:var(--text3);margin-bottom:20px;}
+.xp-drop-zone{border:2px dashed var(--border2);border-radius:12px;padding:32px 20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg3);}
+.xp-drop-zone.drag{border-color:var(--gold);background:rgba(245,200,66,0.06);}
+.xp-drop-zone:hover{border-color:var(--gold);background:rgba(245,200,66,0.04);}
+.xp-drop-icon{font-size:2rem;margin-bottom:8px;}
+.xp-drop-label{font-size:13px;color:var(--text2);font-weight:500;}
+.xp-drop-hint{font-size:11px;color:var(--text3);margin-top:4px;}
+.xp-status{font-size:12px;color:var(--text3);margin-top:12px;min-height:18px;text-align:center;}
+.xp-preview{margin-top:16px;display:none;}
+.xp-preview-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.xp-preview-list{display:flex;flex-direction:column;gap:4px;max-height:280px;overflow-y:auto;}
+.xp-preview-group{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;padding:6px 0 2px;border-top:1px solid var(--border);}
+.xp-preview-group:first-child{border-top:none;padding-top:0;}
+.xp-preview-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 8px;border-radius:7px;background:var(--ativo-item-bg);}
+.xp-preview-item.excluded{opacity:.45;}
+.xp-preview-nome{font-size:12px;color:var(--text);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.xp-preview-classe{font-size:10px;font-weight:700;color:var(--amber);background:rgba(245,200,66,0.1);border-radius:20px;padding:2px 8px;white-space:nowrap;}
+.xp-preview-val{font-size:12px;font-weight:700;color:var(--gold);font-family:'Atkinson Hyperlegible',monospace;white-space:nowrap;}
+.xp-check{width:14px;height:14px;cursor:pointer;accent-color:var(--amber);}
+.xp-modal-actions{display:flex;gap:8px;margin-top:18px;justify-content:flex-end;}
+.xp-btn{padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid;transition:all .15s;font-family:'DM Sans',sans-serif;}
+.xp-btn-cancel{background:transparent;border-color:var(--border2);color:var(--text2);}
+.xp-btn-cancel:hover{border-color:var(--text2);}
+.xp-btn-import{background:var(--amber);border-color:var(--amber);color:#1c1100;}
+.xp-btn-import:hover{background:var(--gold);border-color:var(--gold);}
+.xp-btn-import:disabled{opacity:.4;cursor:not-allowed;}
+.xp-mode-tabs{display:flex;gap:6px;margin-bottom:16px;}
+.xp-tab{flex:1;padding:7px;border-radius:8px;border:1px solid var(--border2);background:transparent;color:var(--text3);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;}
+.xp-tab.active{background:rgba(245,200,66,0.12);border-color:rgba(245,200,66,0.5);color:var(--gold);}
+.xp-merge-opt{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);margin-top:12px;cursor:pointer;}
+.xp-merge-opt input{accent-color:var(--amber);}
+/* Botão importar no card de ativos */
+.btn-xp{background:rgba(245,200,66,0.1);border-color:rgba(245,200,66,0.35);color:var(--amber);}
+.btn-xp:hover{background:rgba(245,200,66,0.2);border-color:var(--amber);}
+</style>
 <style>
 :root {
   --bg:#0e1117;--bg2:#161b25;--bg3:#1c2333;
@@ -573,7 +615,7 @@ body.light .get-key-btn{color:#1a56db}
 
   <!-- ATIVOS -->
   <div class="card">
-    <div class="card-title"><div class="card-title-left">📋 Ativos do cliente <span style="font-size:10px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--text3)">— adicione e classifique</span></div></div>
+    <div class="card-title"><div class="card-title-left">📋 Ativos do cliente <span style="font-size:10px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--text3)">— adicione e classifique</span></div><button class="action-btn btn-xp" id="importXpBtn" onclick="abrirXpModal()" style="font-size:11px;padding:5px 12px;"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16v-8M8 12l4-4 4 4"/><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1"/></svg> Importar XPerformance</button></div>
     <div class="ativos-list" id="ativosList"></div>
     <button class="add-ativo-btn" id="addAtivoBtn">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
@@ -1770,4 +1812,415 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
 })(); // fim IIFE
 </script>
 
+<!-- ══ MODAL XPERFORMANCE ══ -->
+<div id="xpModal">
+  <div class="xp-modal-box">
+    <div class="xp-modal-title">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16v-8M8 12l4-4 4 4"/><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1"/></svg>
+      Importar XPerformance
+    </div>
+    <div class="xp-modal-sub">Carrega automaticamente todos os ativos da aba "Posição Detalhada" do relatório XP.</div>
+
+    <div class="xp-mode-tabs">
+      <button class="xp-tab active" id="xpTabFile" onclick="xpSetTab('file')">📄 Carregar PDF</button>
+      <button class="xp-tab" id="xpTabText" onclick="xpSetTab('text')">📋 Colar texto</button>
+    </div>
+
+    <!-- Aba PDF -->
+    <div id="xpPanelFile">
+      <div class="xp-drop-zone" id="xpDropZone">
+        <div class="xp-drop-icon">📂</div>
+        <div class="xp-drop-label">Arraste o PDF aqui ou clique para selecionar</div>
+        <div class="xp-drop-hint">Relatório XPerformance — qualquer conta XP</div>
+        <input type="file" id="xpFileInput" accept=".pdf" style="display:none">
+      </div>
+    </div>
+
+    <!-- Aba texto -->
+    <div id="xpPanelText" style="display:none">
+      <textarea id="xpTextarea" placeholder="Cole aqui o texto extraído do PDF (Ctrl+A → Ctrl+C do PDF)..." style="width:100%;height:140px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text);font-family:'DM Mono',monospace;resize:vertical;outline:none;box-sizing:border-box;"></textarea>
+      <button class="xp-btn xp-btn-import" style="margin-top:8px;width:100%" onclick="xpProcessarTexto()">Processar texto</button>
+    </div>
+
+    <div class="xp-status" id="xpStatus"></div>
+
+    <!-- Preview dos ativos extraídos -->
+    <div class="xp-preview" id="xpPreview">
+      <div class="xp-preview-title" id="xpPreviewTitle">Ativos encontrados</div>
+      <div class="xp-preview-list" id="xpPreviewList"></div>
+      <label class="xp-merge-opt">
+        <input type="checkbox" id="xpMergeCheck" checked>
+        Manter ativos já cadastrados (não limpar lista)
+      </label>
+    </div>
+
+    <div class="xp-modal-actions">
+      <button class="xp-btn xp-btn-cancel" onclick="fecharXpModal()">Cancelar</button>
+      <button class="xp-btn xp-btn-import" id="xpImportBtn" onclick="xpConfirmarImport()" disabled>Importar ativos</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════
+// EXTRATOR XPERFORMANCE
+// ══════════════════════════════════════════════════
+
+// Configura worker pdf.js
+if (typeof pdfjsLib !== 'undefined') {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+// Mapeamento de estratégias XPerformance → classes do app
+const XP_CLASSE_MAP = {
+  'Pós Fixado':             'Pós-fixado',
+  'Pós-Fixado':             'Pós-fixado',
+  'Pré Fixado':             'Prefixado',
+  'Pré-Fixado':             'Prefixado',
+  'Inflação':               'Inflação',
+  'Inflacao':               'Inflação',
+  'Multimercado':           'Multimercado',
+  'Renda Variável Brasil':  'Renda Variável',
+  'Renda Variavel Brasil':  'Renda Variável',
+  'Alternativo':            'Renda Variável',
+  'Fundos Listados':        'Renda Variável',
+  'Renda Variável Global':  'Renda Variável Global',
+  'Renda Variavel Global':  'Renda Variável Global',
+  'Renda Fixa Global':      'Renda Fixa Global',
+  'Caixa':                  'Caixa',
+  'Proventos':              'Caixa',
+};
+
+// Estratégias-pai reconhecidas (as que encabeçam os grupos de ativos)
+const XP_GRUPOS = Object.keys(XP_CLASSE_MAP);
+
+let xpAtivosParsed = []; // [{nome, classe, valor}]
+let xpTab = 'file';
+
+function abrirXpModal() {
+  document.getElementById('xpModal').classList.add('open');
+  xpReset();
+}
+function fecharXpModal() {
+  document.getElementById('xpModal').classList.remove('open');
+}
+function xpReset() {
+  xpAtivosParsed = [];
+  document.getElementById('xpStatus').textContent = '';
+  document.getElementById('xpPreview').style.display = 'none';
+  document.getElementById('xpImportBtn').disabled = true;
+  document.getElementById('xpFileInput').value = '';
+  document.getElementById('xpTextarea').value = '';
+  document.getElementById('xpDropZone').querySelector('.xp-drop-label').textContent = 'Arraste o PDF aqui ou clique para selecionar';
+}
+function xpSetTab(tab) {
+  xpTab = tab;
+  document.getElementById('xpTabFile').classList.toggle('active', tab === 'file');
+  document.getElementById('xpTabText').classList.toggle('active', tab === 'text');
+  document.getElementById('xpPanelFile').style.display = tab === 'file' ? '' : 'none';
+  document.getElementById('xpPanelText').style.display = tab === 'text' ? '' : 'none';
+  xpReset();
+}
+
+// ── Drop zone ──
+const dropZone = document.getElementById('xpDropZone');
+const fileInput = document.getElementById('xpFileInput');
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('drag');
+  const file = e.dataTransfer.files[0];
+  if (file && file.type === 'application/pdf') xpCarregarPDF(file);
+  else xpSetStatus('⚠️ Selecione um arquivo PDF válido.', 'var(--amber)');
+});
+fileInput.addEventListener('change', () => {
+  if (fileInput.files[0]) xpCarregarPDF(fileInput.files[0]);
+});
+
+// Fechar modal clicando fora
+document.getElementById('xpModal').addEventListener('click', function(e) {
+  if (e.target === this) fecharXpModal();
+});
+
+function xpSetStatus(msg, cor) {
+  const el = document.getElementById('xpStatus');
+  el.textContent = msg;
+  el.style.color = cor || 'var(--text3)';
+}
+
+// ── Extração de texto do PDF via pdf.js ──
+async function xpCarregarPDF(file) {
+  xpSetStatus('⏳ Lendo PDF...', 'var(--text2)');
+  document.getElementById('xpDropZone').querySelector('.xp-drop-label').textContent = file.name;
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    let textoTotal = '';
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      const linhas = content.items.map(item => item.str).join(' ');
+      textoTotal += linhas + '\n';
+    }
+    xpSetStatus(`✓ PDF lido (${pdf.numPages} páginas). Extraindo ativos...`, 'var(--text2)');
+    xpParsearTexto(textoTotal);
+  } catch(e) {
+    console.error(e);
+    xpSetStatus('❌ Erro ao ler o PDF. Tente a aba "Colar texto".', 'var(--red)');
+  }
+}
+
+function xpProcessarTexto() {
+  const txt = document.getElementById('xpTextarea').value;
+  if (!txt.trim()) { xpSetStatus('Cole o texto antes de processar.', 'var(--amber)'); return; }
+  xpParsearTexto(txt);
+}
+
+// ── Parser principal (v4 — robusto a letter-spacing do pdf.js) ──
+// Este relatório XPerformance é gerado com títulos em letter-spacing
+// ("P O S I Ç Ã O   D E T A L H A D A") e números fragmentados caractere
+// a caractere ("R $   15 . 082 , 60"). Por isso:
+//   1) normaliza números fragmentados antes de qualquer regex;
+//   2) corrige ligatures quebradas (fi/fl) e barras de código (FEV/2029);
+//   3) localiza os marcadores de seção com regex tolerante a espaçamento
+//      arbitrário entre letras (marcadorFlex), já que letter-spacing varia
+//      conforme a fonte/página;
+//   4) isola somente os blocos de "Posição Detalhada dos Ativos" (ignora
+//      evolução patrimonial, composição e movimentações — têm muitos "R$"
+//      e geram falsos positivos);
+//   5) dentro desses blocos, captura pares [NOME] R$ [VALOR];
+//   6) classifica cada ativo pelo grupo-pai (estratégia) mais próximo antes dele.
+function xpNormalizarTextoPDF(s) {
+  // Corrige ligatures quebradas comuns em PDFs (fi, fl) em palavras conhecidas
+  s = s.replace(/In\s*fl\s*ação/gi, 'Inflação');
+  s = s.replace(/Con\s*fi\s*anza/gi, 'Confiança');
+  s = s.replace(/Grá\s*fi\s*co/gi, 'Gráfico');
+
+  // Colapsa números fragmentados: "15 . 082 , 60" -> "15.082,60", "R $" -> "R$"
+  let prev;
+  do {
+    prev = s;
+    s = s.replace(/(\d)\s+([.,%])/g, '$1$2');
+    s = s.replace(/([.,%])\s+(\d)/g, '$1$2');
+    s = s.replace(/(\d)\s+(\d)/g, '$1$2');
+    s = s.replace(/R\s+\$/g, 'R$');
+  } while (s !== prev);
+
+  // Junta barras de código/data: "FEV / 2029" -> "FEV/2029"
+  s = s.replace(/([A-Za-zÀ-ÿ0-9])\s*\/\s*(\d)/g, '$1/$2');
+
+  return s;
+}
+
+// Gera regex que casa uma palavra mesmo com espaçamento arbitrário entre letras
+// (ex.: "POSIÇÃO" casa tanto "POSIÇÃO" quanto "P O S I Ç Ã O")
+function xpMarcadorFlex(palavras) {
+  return palavras.map(p => p.split('').join('\\s*')).join('\\s+');
+}
+
+function xpParsearTexto(texto) {
+  const ativos = [];
+  const flat = xpNormalizarTextoPDF(texto.replace(/\s+/g, ' ')).trim();
+
+  // 1. Localizar blocos de "Posição Detalhada dos Ativos" (um por página)
+  const reInicio = new RegExp(xpMarcadorFlex(['POSIÇÃO', 'DETALHADA', 'DOS', 'ATIVOS']), 'gi');
+  const posicoesInicio = [];
+  let mi;
+  while ((mi = reInicio.exec(flat)) !== null) posicoesInicio.push(mi.index + mi[0].length);
+
+  // 1b. FALLBACK: se o marcador de seção não foi encontrado (comum quando o usuário
+  //     copia/cola só a tabela, sem o título acima), mas o texto contém ao menos um
+  //     grupo de estratégia reconhecido (ex: "Pós Fixado") seguido de "R$", trata o
+  //     texto inteiro como um único bloco de posição detalhada.
+  let blocosBrutos;
+  if (posicoesInicio.length === 0) {
+    const temGrupoReconhecido = XP_GRUPOS.some(g => {
+      const re = new RegExp('(?:^|\\s)' + g.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s', 'i');
+      return re.test(flat);
+    });
+    const temValorBRL = /R\$\s*[\d.,]+/.test(flat);
+
+    if (temGrupoReconhecido && temValorBRL) {
+      blocosBrutos = [flat];
+    } else {
+      xpSetStatus('⚠️ Não encontrei ativos no texto colado. Copie incluindo ao menos o nome de uma estratégia (ex: "Pós Fixado") e os valores em R$.', 'var(--amber)');
+      return;
+    }
+  } else {
+    const reFim = new RegExp('(' + xpMarcadorFlex(['Relatório', 'informativo']) + '|' + xpMarcadorFlex(['MOVIMENTAÇÕES']) + ')', 'i');
+    blocosBrutos = posicoesInicio.map(start => {
+      const resto = flat.slice(start);
+      const fimMatch = resto.match(reFim);
+      const end = fimMatch ? fimMatch.index : resto.length;
+      return resto.slice(0, end);
+    });
+  }
+
+  // 2. Remover cabeçalho de colunas repetido (tolerante a letter-spacing) e aviso de precificação
+  const reCabecalho = new RegExp(
+    xpMarcadorFlex(['MÊS']) + '\\s*' + xpMarcadorFlex(['ATUAL']) + '\\s*' + xpMarcadorFlex(['ANO']) + '\\s*24\\s*' + xpMarcadorFlex(['MESES']) +
+    '\\s*Estratégia\\s*Saldo\\s*Bruto\\s*Qtd\\.?\\s*%Aloc\\.?\\s*Rent\\.?\\s*%CDI\\s*Rent\\.?\\s*%CDI\\s*Rent\\.?\\s*%CDI',
+    'gi'
+  );
+  const rePrecif = new RegExp(xpMarcadorFlex(['PRECIFICAÇÃO']) + '[\\s\\S]*?MERCADO', 'gi');
+  const reAvisoRodape = /são datados do fechamento[\s\S]*?relatório\./gi;
+
+  let textoUtil = blocosBrutos.join(' ')
+    .replace(reCabecalho, ' ')
+    .replace(rePrecif, ' ')
+    .replace(reAvisoRodape, ' ');
+
+  // 3. Capturar pares [NOME] R$ [VALOR]
+  const reAtivo = /([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ0-9 \-\.\/\(\),+%#_]+?)\s+R\$\s*([\d]+\.[\d]{3},[\d]{2}|[\d]+,[\d]{2})/g;
+
+  const ignorarNome = [
+    /^Estratégia$/i, /^Saldo Bruto$/i, /^Qtd\.?$/i, /^%Aloc\.?$/i,
+    /^Rent\.?$/i, /^%CDI$/i, /^Mês Atual$/i, /^Ano$/i,
+    /^\d+$/, /^[\d.,\-%\s]+$/, /^Inflação$/i,
+  ];
+
+  function deveIgnorar(nome) {
+    const n = nome.trim();
+    if (n.length < 3) return true;
+    if (ignorarNome.some(re => re.test(n))) return true;
+    if (XP_GRUPOS.some(g => g.toLowerCase() === n.toLowerCase())) return true;
+    return false;
+  }
+
+  let match;
+  const matches = [];
+  while ((match = reAtivo.exec(textoUtil)) !== null) {
+    // Remove hífen/espaço solto no final do nome (quebra de linha no PDF original)
+    const nome = match[1].trim().replace(/\s*-\s*$/, '').replace(/^-\s*/, '').trim();
+    const valor = parseFloat(match[2].replace(/\./g, '').replace(',', '.'));
+    const pos = match.index;
+    if (!deveIgnorar(nome) && !isNaN(valor) && valor > 0) {
+      matches.push({ nome, valor, pos });
+    }
+  }
+
+  // 4. Posições dos grupos-pai dentro do texto útil, para classificar cada ativo
+  //    pelo grupo mais próximo que aparece antes dele
+  const gruposOrdenados = [...XP_GRUPOS].sort((a, b) => b.length - a.length); // mais específico primeiro
+  const gruposPos = [];
+  gruposOrdenados.forEach(g => {
+    let gm;
+    const re = new RegExp('(?:^|\\s)' + g.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?=\\s)', 'gi');
+    while ((gm = re.exec(textoUtil)) !== null) {
+      gruposPos.push({ pos: gm.index, classe: XP_CLASSE_MAP[g], nome: g });
+    }
+  });
+  gruposPos.sort((a, b) => a.pos - b.pos);
+
+  function classeParaPosicao(pos) {
+    let classe = null;
+    for (const g of gruposPos) {
+      if (g.pos < pos) classe = g.classe;
+      else break;
+    }
+    return classe || 'Pós-fixado';
+  }
+
+  // 5. Montar lista final: excluir sub-totais de grupo, deduplicar por nome+valor
+  const vistos = new Set();
+  matches.forEach(({ nome, valor, pos }) => {
+    if (XP_GRUPOS.some(g => nome.toLowerCase() === g.toLowerCase())) return;
+    const classe = classeParaPosicao(pos);
+    const chave = nome.toLowerCase() + '|' + valor.toFixed(2);
+    if (vistos.has(chave)) return;
+    vistos.add(chave);
+    const valorFmt = valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    ativos.push({ nome, classe, valor: valorFmt });
+  });
+
+  if (ativos.length === 0) {
+    xpSetStatus('⚠️ Nenhum ativo encontrado dentro da seção de posição detalhada. Tente a aba "Colar texto".', 'var(--amber)');
+    return;
+  }
+
+  xpAtivosParsed = ativos;
+  xpSetStatus(`✓ ${ativos.length} ativos extraídos com sucesso.`, 'var(--green)');
+  xpMostrarPreview(ativos);
+}
+
+function xpMostrarPreview(ativos) {
+  const preview = document.getElementById('xpPreview');
+  const list = document.getElementById('xpPreviewList');
+  const title = document.getElementById('xpPreviewTitle');
+
+  title.textContent = `${ativos.length} ativos encontrados`;
+  preview.style.display = '';
+
+  // Agrupar por classe
+  const grupos = {};
+  ativos.forEach((a, idx) => {
+    if (!grupos[a.classe]) grupos[a.classe] = [];
+    grupos[a.classe].push({ ...a, idx });
+  });
+
+  list.innerHTML = Object.entries(grupos).map(([classe, items]) => `
+    <div class="xp-preview-group">${classe} (${items.length})</div>
+    ${items.map(a => `
+      <div class="xp-preview-item" data-idx="${a.idx}">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="${a.idx}" checked>
+        <span class="xp-preview-nome" title="${escHtml(a.nome)}">${escHtml(a.nome)}</span>
+        <span class="xp-preview-classe">${a.classe}</span>
+        <span class="xp-preview-val">R$ ${a.valor}</span>
+      </div>
+    `).join('')}
+  `).join('');
+
+  document.getElementById('xpImportBtn').disabled = false;
+}
+
+function xpConfirmarImport() {
+  // Coletar apenas os marcados
+  const checks = document.querySelectorAll('.xp-item-check');
+  const selecionados = [];
+  checks.forEach(cb => {
+    if (cb.checked) {
+      const idx = parseInt(cb.dataset.idx);
+      selecionados.push(xpAtivosParsed[idx]);
+    }
+  });
+
+  if (selecionados.length === 0) {
+    xpSetStatus('Selecione ao menos um ativo para importar.', 'var(--amber)');
+    return;
+  }
+
+  const manter = document.getElementById('xpMergeCheck').checked;
+  if (!manter) ativos.length = 0; // limpa lista atual
+
+  selecionados.forEach(a => addAtivo(a.nome, a.classe, a.valor));
+
+  updatePatrimonio();
+  renderAtivos();
+  fecharXpModal();
+
+  // Feedback rápido no status geral
+  const statusEl = document.querySelector('.card-title');
+  setTimeout(() => {
+    const msg = `✓ ${selecionados.length} ativos importados do XPerformance`;
+    // Mostra toast
+    xpToast(msg);
+  }, 200);
+}
+
+function xpToast(msg) {
+  let t = document.getElementById('xpToast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'xpToast';
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid var(--green);color:var(--green);padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:99999;box-shadow:0 8px 24px rgba(0,0,0,0.4);transition:opacity .3s;pointer-events:none;';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = '1';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => { t.style.opacity = '0'; }, 3000);
+}
+</script>
 </body></html>
