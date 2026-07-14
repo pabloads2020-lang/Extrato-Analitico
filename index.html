@@ -712,7 +712,7 @@ body.light .get-key-btn{color:#1a56db}
       <span class="material-symbols-outlined">open_in_new</span>
       <span>Nova aba</span>
     </button>
-    <span class="hub-clock" id="hubClock">ter., 16 de jun. de 2026 · 13:36:08</span>
+    <span class="hub-clock" id="hubClock">ter., 14 de jul. de 2026 · 09:25:52</span>
     <button class="hub-theme-btn" id="hubThemeBtn"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg></button>
   </div>
 </div>
@@ -751,7 +751,7 @@ body.light .get-key-btn{color:#1a56db}
       </div>
       <div class="patrimonio-tag">
         <span class="patrimonio-tag-lbl">Patrimônio total</span>
-        <span id="patrimVal">R$ 0,00</span>
+        <span id="patrimVal">R$ 540.055,35</span>
       </div>
       <div class="client-field client-field-aporte">
         <span class="client-label">Aporte / caixa adicional</span>
@@ -765,11 +765,11 @@ body.light .get-key-btn{color:#1a56db}
           <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
           Limpar tudo
         </button>
-        <button class="action-btn btn-pdf" id="pdfBtn" style="display:none">
+        <button class="action-btn btn-pdf" id="pdfBtn" style="display: none;">
           <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
           Exportar PDF
         </button>
-        <button class="action-btn btn-excel" id="xlsxBtn" style="display:none">
+        <button class="action-btn btn-excel" id="xlsxBtn" style="display: none;">
           <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M8 8l8 8M16 8l-8 8"></path></svg>
           Exportar Excel
         </button>
@@ -779,14 +779,14 @@ body.light .get-key-btn{color:#1a56db}
 
   <!-- ATIVOS -->
   <div class="card">
-    <div class="card-title"><div class="card-title-left"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 7h8M8 11h8M8 15h5"></path></svg>Ativos do cliente <span class="card-title-hint">— adicione e classifique</span></div><button class="action-btn btn-xp btn-xp-sm" id="importXpBtn" onclick="abrirXpModal()"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16v-8M8 12l4-4 4 4"/><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1"/></svg> Importar XPerformance</button></div>
+    <div class="card-title"><div class="card-title-left"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 7h8M8 11h8M8 15h5"></path></svg>Ativos do cliente <span class="card-title-hint">— adicione e classifique</span></div><button class="action-btn btn-xp btn-xp-sm" id="importXpBtn" onclick="abrirXpModal()"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16v-8M8 12l4-4 4 4"></path><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1"></path></svg> Importar XPerformance</button></div>
     <div class="ativos-header-row" id="ativosHeaderRow">
       <span class="ativos-col-label">Ativo</span>
       <span class="ativos-col-label ativos-col-classe">Classe</span>
       <span class="ativos-col-label ativos-col-valor">Valor (R$)</span>
       <span class="ativos-col-spacer"></span>
     </div>
-    <div class="ativos-list" id="ativosList"></div>
+    <div class="ativos-list" id="ativosList"><div class="ativo-row" data-id="1784031777010.2798"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="BNP Paribas Rubi FIF RF CP RL" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="5.644,26" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777010.2798">×</button></div><div class="ativo-row" data-id="1784031777011.8"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Bradesco Ultra Xp Seg Prev Fic fi rf" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="87.675,68" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777011.8">×</button></div><div class="ativo-row" data-id="1784031777011.3435"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Compass Yield 30 FIF RF CP LP RL" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="13.131,89" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777011.3435">×</button></div><div class="ativo-row" data-id="1784031777012.1638"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Kinea Alpes Prev Xp Seg Mm Cp Fic fi" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="148,22" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777012.1638">×</button></div><div class="ativo-row" data-id="1784031777012.2292"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Trend Cash CIC de Classes RF Simples RL" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="12.504,29" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777012.2292">×</button></div><div class="ativo-row" data-id="1784031777012.1045"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Xp Liquidez 50 Firf Rl" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="216.421,63" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777012.1045">×</button></div><div class="ativo-row" data-id="1784031777013.3704"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="XP Liquidez FIC RF REF DI CP RL" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="667,41" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777013.3704">×</button></div><div class="ativo-row" data-id="1784031777013.8005"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="DEB ENAUTA - DEZ/2029 - IPC - A + 9,01%" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="3.137,94" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777013.8005">×</button></div><div class="ativo-row" data-id="1784031777013.982"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="DEB ENGIE - SET/2046 - IPC - A + 6,69%" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="6.283,43" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777013.982">×</button></div><div class="ativo-row" data-id="1784031777014.994"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Kinea Prev XP Seg IPCA Dinâmico FICFI RF" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="68.103,49" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777014.994">×</button></div><div class="ativo-row" data-id="1784031777014.409"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Trend Inflação Geral FIRF LP RL" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="9.737,09" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777014.409">×</button></div><div class="ativo-row" data-id="1784031777016.93"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Trend Ntn - B 2035 Xp Seg Prev Fic Firf" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="39.844,71" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777016.93">×</button></div><div class="ativo-row" data-id="1784031777017.653"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="CDB BMG - ABR/2027 - 14,48%" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado" selected="">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="2.673,57" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777017.653">×</button></div><div class="ativo-row" data-id="1784031777017.5537"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="CDB PICPAY - JUL/2027 - 13,45%" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado" selected="">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="10.518,78" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777017.5537">×</button></div><div class="ativo-row" data-id="1784031777018.5115"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="CDB PICPAY - MAI/2028 - 14,97%" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado" selected="">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="1.016,75" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777018.5115">×</button></div><div class="ativo-row" data-id="1784031777018.3303"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Kapitalo K10 Global Prev Xp Seg Advisory Fic Fim Rl" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado" selected="">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="39.269,04" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777018.3303">×</button></div><div class="ativo-row" data-id="1784031777019.6003"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Real Investor FIC de FIF em Ações RL" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável" selected="">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="8.228,33" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777019.6003">×</button></div><div class="ativo-row" data-id="1784031777020.7598"><input class="ativo-nome-input" type="text" placeholder="Nome do ativo" value="Tarpon GT 90 FIF FIA" data-field="nome"><select class="classe-select" data-field="classe"><option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável" selected="">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option></select><input class="ativo-valor-input" type="text" placeholder="0,00" value="15.048,84" data-field="valor" inputmode="numeric"><button class="remove-btn" data-remove="1784031777020.7598">×</button></div></div>
     <button class="add-ativo-btn" id="addAtivoBtn">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
       Adicionar ativo
@@ -800,27 +800,35 @@ body.light .get-key-btn{color:#1a56db}
   </div>
 
   <!-- COMPARISON GRID -->
-  <div class="grid2" id="compGrid" style="display:none">
+  <div class="grid2" id="compGrid" style="display: none;">
     <div class="card">
       <div class="card-title"><div class="card-title-left"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"></path><path d="M7 14l3-3 3 3 5-6"></path></svg>Carteira atual vs. recomendada</div><button class="copy-img-btn" id="copyImgBtnComp" onclick="copiarImagemCard('compCardImg','copyImgBtnComp')"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path><rect x="9" y="3" width="6" height="4" rx="1"></rect></svg>Copiar</button></div>
       <div id="compCardImg">
-      <div id="classesComparison"></div>
+      <div id="classesComparison"><div class="classe-item"><div class="dot-class c0"></div><span class="classe-nome-label">Prefixado</span><div class="dual-bar"><div class="bar-atual" style="width:2.6310451326887145%"></div><div class="bar-alvo" style="left:13%"></div></div><div class="classe-pcts"><span class="pct-atual">2.6%</span><span class="pct-alvo">alvo: 13%</span></div></div><div class="classe-item"><div class="dot-class c1"></div><span class="classe-nome-label">Pós-fixado</span><div class="dual-bar"><div class="bar-atual" style="width:62.251652538948086%"></div><div class="bar-alvo" style="left:53.5%"></div></div><div class="classe-pcts"><span class="pct-atual">62.3%</span><span class="pct-alvo">alvo: 53.5%</span></div></div><div class="classe-item"><div class="dot-class c2"></div><span class="classe-nome-label">Inflação</span><div class="dual-bar"><div class="bar-atual" style="width:23.535857944931017%"></div><div class="bar-alvo" style="left:20%"></div></div><div class="classe-pcts"><span class="pct-atual">23.5%</span><span class="pct-alvo">alvo: 20%</span></div></div><div class="classe-item"><div class="dot-class c3"></div><span class="classe-nome-label">Multimercado</span><div class="dual-bar"><div class="bar-atual" style="width:7.271299136282976%"></div><div class="bar-alvo" style="left:7.5%"></div></div><div class="classe-pcts"><span class="pct-atual">7.3%</span><span class="pct-alvo">alvo: 7.5%</span></div></div><div class="classe-item"><div class="dot-class c4"></div><span class="classe-nome-label">Renda Variável</span><div class="dual-bar"><div class="bar-atual" style="width:4.310145247149204%"></div><div class="bar-alvo" style="left:6%"></div></div><div class="classe-pcts"><span class="pct-atual">4.3%</span><span class="pct-alvo">alvo: 6%</span></div></div><div class="classe-item"><div class="dot-class c5"></div><span class="classe-nome-label">Renda Fixa Global</span><div class="dual-bar"><div class="bar-atual" style="width:0%"></div><div class="bar-alvo" style="left:0%"></div></div><div class="classe-pcts"><span class="pct-atual">0.0%</span><span class="pct-alvo">alvo: 0%</span></div></div><div class="classe-item"><div class="dot-class c6"></div><span class="classe-nome-label">Renda Variável Global</span><div class="dual-bar"><div class="bar-atual" style="width:0%"></div><div class="bar-alvo" style="left:0%"></div></div><div class="classe-pcts"><span class="pct-atual">0.0%</span><span class="pct-alvo">alvo: 0%</span></div></div><div class="classe-item"><div class="dot-class c7"></div><span class="classe-nome-label">Caixa</span><div class="dual-bar"><div class="bar-atual" style="width:0%"></div><div class="bar-alvo" style="left:0%"></div></div><div class="classe-pcts"><span class="pct-atual">0.0%</span><span class="pct-alvo">alvo: 0%</span></div></div></div>
       <div class="legenda-bar"><div class="legenda-item"><div class="leg-line leg-line-atual"></div>Atual</div><div class="legenda-item"><div class="leg-line leg-line-alvo"></div>Alvo</div></div>
       </div>
     </div>
     <div class="card">
       <div class="card-title"><div class="card-title-left"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"></path><path d="M3 11V9a4 4 0 014-4h14"></path><path d="M7 23l-4-4 4-4"></path><path d="M21 13v2a4 4 0 01-4 4H3"></path></svg>Recomendações por classe</div><button class="copy-img-btn" id="copyImgBtnRec" onclick="copiarImagemCard('recCardImg','copyImgBtnRec')"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path><rect x="9" y="3" width="6" height="4" rx="1"></rect></svg>Copiar</button></div>
       <div id="recCardImg">
-      <div id="recClasses"></div>
-      <div class="resumo-grid" id="resumoGrid"></div>
+      <div id="recClasses"><div class="rec-row alocar"><div class="rec-dot"></div><span class="rec-nome">Prefixado</span><span class="rec-badge badge-alocar">↑ Alocar 10.37%</span><span class="rec-valor alocar">+R$ 55.998,10</span></div><div class="rec-row retirar"><div class="rec-dot"></div><span class="rec-nome">Pós-fixado</span><span class="rec-badge badge-retirar">↓ Retirar 8.75%</span><span class="rec-valor retirar">R$ -47.263,77</span></div><div class="rec-row retirar"><div class="rec-dot"></div><span class="rec-nome">Inflação</span><span class="rec-badge badge-retirar">↓ Retirar 3.54%</span><span class="rec-valor retirar">R$ -19.095,59</span></div><div class="rec-row manter"><div class="rec-dot"></div><span class="rec-nome">Multimercado</span><span class="rec-badge badge-manter">✓ Manter</span><span class="rec-valor manter">+R$ 1.235,11</span></div><div class="rec-row alocar"><div class="rec-dot"></div><span class="rec-nome">Renda Variável</span><span class="rec-badge badge-alocar">↑ Alocar 1.69%</span><span class="rec-valor alocar">+R$ 9.126,15</span></div><div class="rec-row manter"><div class="rec-dot"></div><span class="rec-nome">Renda Fixa Global</span><span class="rec-badge badge-manter">✓ Manter</span><span class="rec-valor manter">—</span></div><div class="rec-row manter"><div class="rec-dot"></div><span class="rec-nome">Renda Variável Global</span><span class="rec-badge badge-manter">✓ Manter</span><span class="rec-valor manter">—</span></div></div>
+      <div class="resumo-grid" id="resumoGrid"><div class="resumo-item"><div class="resumo-label">Total + Aporte</div><div class="resumo-val resumo-val-sm">R$ 540.055,35</div></div><div class="resumo-item"><div class="resumo-label">A alocar</div><div class="resumo-val green">R$ 65.124,25</div></div><div class="resumo-item"><div class="resumo-label">A retirar</div><div class="resumo-val red">R$ 66.359,36</div></div><div class="resumo-item"><div class="resumo-label">Classes OK</div><div class="resumo-val amber">3/7</div></div></div>
       </div>
     </div>
   </div>
 
   <!-- AI + SPEC RECS -->
-  <div class="card rec-section" id="recCard" style="display:none">
+  <div class="card rec-section" id="recCard" style="display: none;">
     <div class="card-title"><div class="card-title-left"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M3 12h3m12 0h3M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1"></path><circle cx="12" cy="12" r="3.2"></circle></svg>Recomendações automáticas de ativos</div><button class="collapse-btn" onclick="toggleCollapse('specRecsBody',this)"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"></path></svg> Ocultar</button></div>
-    <div id="specRecsBody" class="collapsible expanded"><div id="specRecs"></div><div class="ai-analysis" id="aiAnalysis"><div class="ai-header"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>Análise inteligente</div><div id="aiContent"></div></div></div>
+    <div id="specRecsBody" class="collapsible expanded"><div id="specRecs"><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — BNP Paribas Rubi FIF RF CP RL</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Pós-fixado está 8.8pp acima do alvo (62.3% vs 53.5% recomendado).</div></div><div class="spec-rec-val saida">−R$ 5.644,26</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — Bradesco Ultra Xp Seg Prev Fic fi rf</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Pós-fixado está 8.8pp acima do alvo (62.3% vs 53.5% recomendado).</div></div><div class="spec-rec-val saida">−R$ 87.675,68</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Aumentar posição — Compass Yield 30 FIF RF CP LP RL</div><div class="spec-rec-desc">Cliente: <strong>2.43%</strong> · Recomendado: <strong>8.00%</strong> · Déficit: <strong>-5.57pp</strong></div></div><div class="spec-rec-val entrada">+R$ 30.072,54</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — Kinea Alpes Prev Xp Seg Mm Cp Fic fi</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Pós-fixado está 8.8pp acima do alvo (62.3% vs 53.5% recomendado).</div></div><div class="spec-rec-val saida">−R$ 148,22</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — Trend Cash CIC de Classes RF Simples RL</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Pós-fixado está 8.8pp acima do alvo (62.3% vs 53.5% recomendado).</div></div><div class="spec-rec-val saida">−R$ 12.504,29</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — Xp Liquidez 50 Firf Rl</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Pós-fixado está 8.8pp acima do alvo (62.3% vs 53.5% recomendado).</div></div><div class="spec-rec-val saida">−R$ 216.421,63</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Aumentar posição — XP Liquidez FIC RF REF DI CP RL</div><div class="spec-rec-desc">Cliente: <strong>0.12%</strong> · Recomendado: <strong>14.00%</strong> · Déficit: <strong>-13.88pp</strong></div></div><div class="spec-rec-val entrada">+R$ 74.940,34</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — DEB ENAUTA - DEZ/2029 - IPC - A + 9,01%</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Inflação está 3.5pp acima do alvo (23.5% vs 20% recomendado).</div></div><div class="spec-rec-val saida">−R$ 3.137,94</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — DEB ENGIE - SET/2046 - IPC - A + 6,69%</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Inflação está 3.5pp acima do alvo (23.5% vs 20% recomendado).</div></div><div class="spec-rec-val saida">−R$ 6.283,43</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — Kinea Prev XP Seg IPCA Dinâmico FICFI RF</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Inflação está 3.5pp acima do alvo (23.5% vs 20% recomendado).</div></div><div class="spec-rec-val saida">−R$ 68.103,49</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Aumentar posição — Trend Inflação Geral FIRF LP RL</div><div class="spec-rec-desc">Cliente: <strong>1.80%</strong> · Recomendado: <strong>4.00%</strong> · Déficit: <strong>-2.20pp</strong></div></div><div class="spec-rec-val entrada">+R$ 11.865,12</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — Trend Ntn - B 2035 Xp Seg Prev Fic Firf</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Inflação está 3.5pp acima do alvo (23.5% vs 20% recomendado).</div></div><div class="spec-rec-val saida">−R$ 39.844,71</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — CDB BMG - ABR/2027 - 14,48%</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Prefixado: 2.6% atual vs 13% recomendado.</div></div><div class="spec-rec-val saida">−R$ 2.673,57</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — CDB PICPAY - JUL/2027 - 13,45%</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Prefixado: 2.6% atual vs 13% recomendado.</div></div><div class="spec-rec-val saida">−R$ 10.518,78</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — CDB PICPAY - MAI/2028 - 14,97%</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Prefixado: 2.6% atual vs 13% recomendado.</div></div><div class="spec-rec-val saida">−R$ 1.016,75</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — Kapitalo K10 Global Prev Xp Seg Advisory Fic Fim Rl</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Multimercado: 7.3% atual vs 7.5% recomendado.</div></div><div class="spec-rec-val saida">−R$ 39.269,04</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Aumentar posição — Real Investor FIC de FIF em Ações RL</div><div class="spec-rec-desc">Cliente: <strong>1.52%</strong> · Recomendado: <strong>3.00%</strong> · Déficit: <strong>-1.48pp</strong></div></div><div class="spec-rec-val entrada">+R$ 7.973,33</div></div><div class="spec-rec saida"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title saida">Considerar saída — Tarpon GT 90 FIF FIA</div><div class="spec-rec-desc">Ativo não consta na carteira recomendada para perfil Moderado. Classe Renda Variável: 4.3% atual vs 6% recomendado.</div></div><div class="spec-rec-val saida">−R$ 15.048,84</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Entrada sugerida — CDB 2 anos / LCI e LCA #feed #pré</div><div class="spec-rec-desc">Não encontrado na carteira do cliente · Prefixado · Peso recomendado: <strong>13%</strong></div></div><div class="spec-rec-val entrada">+R$ 70.207,20</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Entrada sugerida — ARX Fuji FIC de FIF RF CP RL</div><div class="spec-rec-desc">Não encontrado na carteira do cliente · Pós-fixado · Peso recomendado: <strong>13%</strong></div></div><div class="spec-rec-val entrada">+R$ 70.207,20</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Entrada sugerida — SulAmérica Crédito Ativo FIRF CP LP</div><div class="spec-rec-desc">Não encontrado na carteira do cliente · Pós-fixado · Peso recomendado: <strong>14%</strong></div></div><div class="spec-rec-val entrada">+R$ 75.607,75</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Entrada sugerida — Valora Vanguard FIC de FIDC RL</div><div class="spec-rec-desc">Não encontrado na carteira do cliente · Pós-fixado · Peso recomendado: <strong>7%</strong></div></div><div class="spec-rec-val entrada">+R$ 37.803,87</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Entrada sugerida — NTN-B 2035</div><div class="spec-rec-desc">Não encontrado na carteira do cliente · Inflação · Peso recomendado: <strong>10%</strong></div></div><div class="spec-rec-val entrada">+R$ 54.005,54</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Entrada sugerida — ACE Capital Advisory FIC FIM</div><div class="spec-rec-desc">Não encontrado na carteira do cliente · Multimercado · Peso recomendado: <strong>2.5%</strong></div></div><div class="spec-rec-val entrada">+R$ 13.501,38</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Entrada sugerida — Kapitalo K10 Advisory FIC FIM</div><div class="spec-rec-desc">Não encontrado na carteira do cliente · Multimercado · Peso recomendado: <strong>2.5%</strong></div></div><div class="spec-rec-val entrada">+R$ 13.501,38</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Entrada sugerida — NDIV11 / NSDV11</div><div class="spec-rec-desc">Não encontrado na carteira do cliente · Renda Variável · Peso recomendado: <strong>3%</strong></div></div><div class="spec-rec-val entrada">+R$ 16.201,66</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Entrada sugerida — Itaú Debêntures Incentivadas FIF CIC em Infra RF CP RL</div><div class="spec-rec-desc">Não encontrado na carteira do cliente · Inflação · Peso recomendado: <strong>6%</strong></div></div><div class="spec-rec-val entrada">+R$ 32.403,32</div></div><div class="spec-rec entrada"><div class="spec-rec-icon"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></div><div class="spec-rec-body"><div class="spec-rec-title entrada">Entrada sugerida — Jubarte Migration II FIC FIM</div><div class="spec-rec-desc">Não encontrado na carteira do cliente · Multimercado · Peso recomendado: <strong>2.5%</strong></div></div><div class="spec-rec-val entrada">+R$ 13.501,38</div></div></div><div class="ai-analysis" id="aiAnalysis"><div class="ai-header"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>Análise inteligente</div><div id="aiContent"><div class="ai-text">Prezado(a) Cliente,
+
+Parabéns por sua disciplina e pela construção de um patrimônio robusto. Analisando sua carteira atual de R$ 540.055,35, identificamos oportunidades significativas para otimizá-la e alinhá-la ainda mais ao seu perfil Moderado. Atualmente, a carteira apresenta um sobrepeso considerável em ativos Pós-fixados (62.3% vs. alvo de 53.5%) e em Inflação (23.5% vs. alvo de 20%), enquanto está subalocada em Prefixados (2.6% vs. alvo de 13%) e Renda Variável (4.3% vs. alvo de 6%). Há também uma fragmentação em algumas classes, com diversas posições pequenas que podem ser consolidadas para maior eficiência.
+
+Para iniciar o rebalanceamento, sugerimos as seguintes saídas estratégicas. Na classe Pós-fixado, é recomendável reduzir a exposição em cerca de R$ 47.200. Isso pode ser feito através da venda de posições menos eficientes e mais pulverizadas, como o Kinea Alpes Prev Xp Seg (R$ 148,22), Trend Cash CIC (R$ 12.504,29), BNP Paribas Rubi FIF RF CP RL (R$ 5.644,26) e uma parte do Bradesco Ultra Xp Seg Prev Fic (R$ 87.675,68) ou XP Liquidez 50 Firf Rl (R$ 216.421,63), dado o tamanho destas últimas. Para a classe Inflação, propomos uma redução de aproximadamente R$ 19.000, que pode ser realizada com a venda parcial do Kinea Prev XP Seg IPCA Dinâmico FICFI RF (R$ 68.103,49) ou do Trend Ntn - B 2035 Xp Seg Prev Fic Firf (R$ 39.844,71), duas das maiores posições nesta categoria.
+
+Com os recursos liberados, as principais entradas recomendadas visam equilibrar a carteira. Primeiramente, é crucial aumentar a alocação em Prefixados em aproximadamente R$ 56.000, para atingir o alvo de 13%. Essa classe oferece previsibilidade de retorno e é fundamental para a estabilidade e diversificação do seu portfólio. Sugerimos a alocação em CDBs de bancos de médio porte ou LCIs/LCAs com prazos adequados e boa rentabilidade, como os recomendados (CDB 2 anos / LCI e LCA #feed #pré). Em seguida, devemos ampliar a exposição em Renda Variável com um aporte de cerca de R$ 9.100, para alcançar os 6% do seu patrimônio. Essa classe é essencial para o crescimento de capital no longo prazo e para proteger seu poder de compra. Recomendamos fundos como Real Investor FIC FIA BDR Nível I ou ETFs como NDIV11 / NSDV11 para diversificação. Finalmente, um pequeno aporte de aproximadamente R$ 1.200 em Multimercados em fundos como ACE Capital Advisory FIC FIM ou Jubarte Migration II FIC FIM complementará a posição existente, buscando retornos absolutos e diversificação de estratégias.
+
+Este rebalanceamento visa otimizar a relação risco-retorno da sua carteira, alinhando-a perfeitamente ao seu perfil Moderado. Ao consolidar posições e redistribuir o capital, você aumentará a diversificação, potencializará o crescimento do capital no longo prazo e fornecerá uma base mais sólida para o alcance dos seus objetivos financeiros, com maior previsibilidade e eficiência. Estamos à disposição para auxiliá-lo(a) na implementação destas recomendações.</div></div></div></div>
   </div>
 
   <!-- RECOMENDAÇÕES MANUAIS -->
@@ -939,7 +947,7 @@ const CARTEIRAS = {
         "peso": 4
       },
       {
-        "nome": "NTN-B 2035",
+        "nome": "NTN-B de 10 a 15 anos",
         "classe": "Inflação",
         "peso": 10
       },
@@ -1020,7 +1028,7 @@ const CARTEIRAS = {
         "peso": 10
       },
       {
-        "nome": "NTN-B 2035",
+        "nome": "NTN-B de 10 a 15 anos",
         "classe": "Inflação",
         "peso": 16
       },
@@ -1170,32 +1178,32 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
   </div>
   <div class="ed-body">
     <div class="ed-info">Edite e clique em <strong>Exportar HTML</strong> para salvar. As mudanças refletem no analisador em tempo real.</div>
-    <div class="ed-perfil-row" id="edPerfilRow"><button class="ed-perfil-btn" data-p="Conservador"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Conservador</button><button class="ed-perfil-btn ativo" data-p="Moderado"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v18M2 8l3 7a3 3 0 006 0l-3-7H2zM13 8l3 7a3 3 0 006 0l-3-7h-6z"></path></svg>Moderado</button><button class="ed-perfil-btn" data-p="Agressivo"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 17l5-5-5-5M12 19h8"></path></svg>Agressivo</button></div>
+    <div class="ed-perfil-row" id="edPerfilRow"><button class="ed-perfil-btn" data-p="Conservador"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Conservador</button><button class="ed-perfil-btn" data-p="Moderado"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v18M2 8l3 7a3 3 0 006 0l-3-7H2zM13 8l3 7a3 3 0 006 0l-3-7h-6z"></path></svg>Moderado</button><button class="ed-perfil-btn ativo" data-p="Agressivo"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 17l5-5-5-5M12 19h8"></path></svg>Agressivo</button></div>
     <div class="ed-sec" style="margin-bottom:.5rem">Alocação por classe (%)</div>
     <div class="ed-classes-grid" id="edClassesGrid">
       <div class="ed-class-row">
         <span class="ed-class-label">Prefixado</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="13" data-cls="Prefixado">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="15" data-cls="Prefixado">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Pós-fixado</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="53.5" data-cls="Pós-fixado">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="43" data-cls="Pós-fixado">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Inflação</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="20" data-cls="Inflação">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="24" data-cls="Inflação">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Multimercado</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="7.5" data-cls="Multimercado">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="8" data-cls="Multimercado">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Renda Variável</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="6" data-cls="Renda Variável">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="10" data-cls="Renda Variável">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
@@ -1245,7 +1253,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="13" data-action="peso" data-idx="0" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="15" data-action="peso" data-idx="0" data-prev="0">
           </div>
         </div>
       </div>
@@ -1261,7 +1269,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="ARX Fuji FIC de FIF RF CP RL" data-action="nome" data-idx="1" data-prev="0">
+            <input class="ed-input" type="text" value="Compass Yield 30 FIF RF CP LP RL" data-action="nome" data-idx="1" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1276,7 +1284,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="13" data-action="peso" data-idx="1" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="1" data-prev="0">
           </div>
         </div>
       </div>
@@ -1292,7 +1300,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="SulAmérica Crédito Ativo FIRF CP LP" data-action="nome" data-idx="2" data-prev="0">
+            <input class="ed-input" type="text" value="ARX Fuji FIC de FIF RF CP RL" data-action="nome" data-idx="2" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1307,7 +1315,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="14" data-action="peso" data-idx="2" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="2" data-prev="0">
           </div>
         </div>
       </div>
@@ -1323,7 +1331,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Compass Yield 30 FIF RF CP LP RL" data-action="nome" data-idx="3" data-prev="0">
+            <input class="ed-input" type="text" value="Valora Vanguard FIC de FIDC RL" data-action="nome" data-idx="3" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1338,7 +1346,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="3" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="3" data-prev="0">
           </div>
         </div>
       </div>
@@ -1354,7 +1362,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="XP Liquidez FIC RF REF DI CP RL" data-action="nome" data-idx="4" data-prev="0">
+            <input class="ed-input" type="text" value="SulAmérica Crédito Ativo FIRF CP LP" data-action="nome" data-idx="4" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1369,7 +1377,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="14" data-action="peso" data-idx="4" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="4" data-prev="0">
           </div>
         </div>
       </div>
@@ -1385,7 +1393,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Valora Vanguard FIC de FIDC RL" data-action="nome" data-idx="5" data-prev="0">
+            <input class="ed-input" type="text" value="XP Liquidez FIC RF REF DI CP RL" data-action="nome" data-idx="5" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1400,7 +1408,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="7" data-action="peso" data-idx="5" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="5" data-prev="0">
           </div>
         </div>
       </div>
@@ -1416,7 +1424,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Trend Inflação Geral FIRF LP" data-action="nome" data-idx="6" data-prev="0">
+            <input class="ed-input" type="text" value="NTN-B 2035" data-action="nome" data-idx="6" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1431,7 +1439,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="4" data-action="peso" data-idx="6" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="16" data-action="peso" data-idx="6" data-prev="0">
           </div>
         </div>
       </div>
@@ -1447,7 +1455,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="NTN-B 2035" data-action="nome" data-idx="7" data-prev="0">
+            <input class="ed-input" type="text" value="ACE Capital Advisory FIC FIM" data-action="nome" data-idx="7" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1457,12 +1465,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="7" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado" selected="">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="7" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="7" data-prev="0">
           </div>
         </div>
       </div>
@@ -1478,7 +1486,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="ACE Capital Advisory FIC FIM" data-action="nome" data-idx="8" data-prev="0">
+            <input class="ed-input" type="text" value="Kapitalo K10 Advisory FIC FIM" data-action="nome" data-idx="8" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1509,7 +1517,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Kapitalo K10 Advisory FIC FIM" data-action="nome" data-idx="9" data-prev="0">
+            <input class="ed-input" type="text" value="Real Investor FIC FIA BDR Nível I" data-action="nome" data-idx="9" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1519,12 +1527,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="9" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado" selected="">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável" selected="">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="9" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="5" data-action="peso" data-idx="9" data-prev="0">
           </div>
         </div>
       </div>
@@ -1540,7 +1548,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Real Investor FIC FIA BDR Nível I" data-action="nome" data-idx="10" data-prev="0">
+            <input class="ed-input" type="text" value="NDIV11 / NSDV11" data-action="nome" data-idx="10" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1555,7 +1563,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="3" data-action="peso" data-idx="10" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="5" data-action="peso" data-idx="10" data-prev="0">
           </div>
         </div>
       </div>
@@ -1571,7 +1579,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="NDIV11 / NSDV11" data-action="nome" data-idx="11" data-prev="0">
+            <input class="ed-input" type="text" value="JURO11" data-action="nome" data-idx="11" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1581,12 +1589,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="11" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável" selected="">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="3" data-action="peso" data-idx="11" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="11" data-prev="0">
           </div>
         </div>
       </div>
@@ -1602,7 +1610,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Itaú Debêntures Incentivadas FIF CIC em Infra RF CP RL" data-action="nome" data-idx="12" data-prev="0">
+            <input class="ed-input" type="text" value="Jubarte Migration II FIC FIM" data-action="nome" data-idx="12" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1612,43 +1620,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="12" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
-            </select>
-          </div>
-          <div class="ed-field">
-            <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="6" data-action="peso" data-idx="12" data-prev="0">
-          </div>
-        </div>
-      </div>
-      <div class="ed-ativo-card">
-        <div class="ed-ativo-top">
-          <div class="ed-ativo-tags">
-            
-            
-            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="13" data-prev="0">+ 2º ativo</button>
-          </div>
-          <button class="ed-btn ed-btn-del" data-action="del" data-idx="13" data-prev="0"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:-1px;margin-right:3px"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6"></path></svg>remover</button>
-        </div>
-        
-          <div class="ed-field">
-            <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Jubarte Migration II FIC FIM" data-action="nome" data-idx="13" data-prev="0">
-          </div>
-          <div class="ed-field">
-            <div class="ed-field-lbl">Link (opcional)</div>
-            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="13" data-prev="0">
-          </div>
-        <div class="ed-grid2">
-          <div class="ed-field">
-            <div class="ed-field-lbl">Classe</div>
-            <select class="ed-input ed-select" data-action="classe" data-idx="13" data-prev="0">
               <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado" selected="">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="13" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="12" data-prev="0">
           </div>
         </div>
       </div></div>
@@ -1990,10 +1967,10 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
 </script>
 
 <!-- ══ MODAL XPERFORMANCE ══ -->
-<div id="xpModal">
+<div id="xpModal" class="">
   <div class="xp-modal-box">
     <div class="xp-modal-title">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16v-8M8 12l4-4 4 4"/><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1"/></svg>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16v-8M8 12l4-4 4 4"></path><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1"></path></svg>
       Importar XPerformance
     </div>
     <div class="xp-modal-sub">Carrega automaticamente todos os ativos da aba "Posição Detalhada" do relatório XP.</div>
@@ -2007,7 +1984,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
     <div id="xpPanelFile">
       <div class="xp-drop-zone" id="xpDropZone">
         <div class="xp-drop-icon"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"></path></svg></div>
-        <div class="xp-drop-label">Arraste o PDF aqui ou clique para selecionar</div>
+        <div class="xp-drop-label">XPerformance - 2319500 - Tiberio Cabral.pdf</div>
         <div class="xp-drop-hint">Relatório XPerformance — qualquer conta XP</div>
         <input type="file" id="xpFileInput" accept=".pdf" style="display:none">
       </div>
@@ -2019,21 +1996,162 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
       <button class="xp-btn xp-btn-import" style="margin-top:8px;width:100%" onclick="xpProcessarTexto()">Processar texto</button>
     </div>
 
-    <div class="xp-status" id="xpStatus"></div>
+    <div class="xp-status" id="xpStatus" style="color: var(--green);">✓ 18 ativos extraídos com sucesso.</div>
 
     <!-- Preview dos ativos extraídos -->
-    <div class="xp-preview" id="xpPreview">
-      <div class="xp-preview-title" id="xpPreviewTitle">Ativos encontrados</div>
-      <div class="xp-preview-list" id="xpPreviewList"></div>
+    <div class="xp-preview" id="xpPreview" style="">
+      <div class="xp-preview-title" id="xpPreviewTitle">18 ativos encontrados</div>
+      <div class="xp-preview-list" id="xpPreviewList">
+    <div class="xp-preview-group">Pós-fixado (7)</div>
+    
+      <div class="xp-preview-item" data-idx="0">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="0" checked="">
+        <span class="xp-preview-nome" title="BNP Paribas Rubi FIF RF CP RL">BNP Paribas Rubi FIF RF CP RL</span>
+        <span class="xp-preview-classe">Pós-fixado</span>
+        <span class="xp-preview-val">R$ 5.644,26</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="1">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="1" checked="">
+        <span class="xp-preview-nome" title="Bradesco Ultra Xp Seg Prev Fic fi rf">Bradesco Ultra Xp Seg Prev Fic fi rf</span>
+        <span class="xp-preview-classe">Pós-fixado</span>
+        <span class="xp-preview-val">R$ 87.675,68</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="2">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="2" checked="">
+        <span class="xp-preview-nome" title="Compass Yield 30 FIF RF CP LP RL">Compass Yield 30 FIF RF CP LP RL</span>
+        <span class="xp-preview-classe">Pós-fixado</span>
+        <span class="xp-preview-val">R$ 13.131,89</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="3">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="3" checked="">
+        <span class="xp-preview-nome" title="Kinea Alpes Prev Xp Seg Mm Cp Fic fi">Kinea Alpes Prev Xp Seg Mm Cp Fic fi</span>
+        <span class="xp-preview-classe">Pós-fixado</span>
+        <span class="xp-preview-val">R$ 148,22</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="4">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="4" checked="">
+        <span class="xp-preview-nome" title="Trend Cash CIC de Classes RF Simples RL">Trend Cash CIC de Classes RF Simples RL</span>
+        <span class="xp-preview-classe">Pós-fixado</span>
+        <span class="xp-preview-val">R$ 12.504,29</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="5">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="5" checked="">
+        <span class="xp-preview-nome" title="Xp Liquidez 50 Firf Rl">Xp Liquidez 50 Firf Rl</span>
+        <span class="xp-preview-classe">Pós-fixado</span>
+        <span class="xp-preview-val">R$ 216.421,63</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="6">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="6" checked="">
+        <span class="xp-preview-nome" title="XP Liquidez FIC RF REF DI CP RL">XP Liquidez FIC RF REF DI CP RL</span>
+        <span class="xp-preview-classe">Pós-fixado</span>
+        <span class="xp-preview-val">R$ 667,41</span>
+      </div>
+    
+  
+    <div class="xp-preview-group">Inflação (5)</div>
+    
+      <div class="xp-preview-item" data-idx="7">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="7" checked="">
+        <span class="xp-preview-nome" title="DEB ENAUTA - DEZ/2029 - IPC - A + 9,01%">DEB ENAUTA - DEZ/2029 - IPC - A + 9,01%</span>
+        <span class="xp-preview-classe">Inflação</span>
+        <span class="xp-preview-val">R$ 3.137,94</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="8">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="8" checked="">
+        <span class="xp-preview-nome" title="DEB ENGIE - SET/2046 - IPC - A + 6,69%">DEB ENGIE - SET/2046 - IPC - A + 6,69%</span>
+        <span class="xp-preview-classe">Inflação</span>
+        <span class="xp-preview-val">R$ 6.283,43</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="9">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="9" checked="">
+        <span class="xp-preview-nome" title="Kinea Prev XP Seg IPCA Dinâmico FICFI RF">Kinea Prev XP Seg IPCA Dinâmico FICFI RF</span>
+        <span class="xp-preview-classe">Inflação</span>
+        <span class="xp-preview-val">R$ 68.103,49</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="10">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="10" checked="">
+        <span class="xp-preview-nome" title="Trend Inflação Geral FIRF LP RL">Trend Inflação Geral FIRF LP RL</span>
+        <span class="xp-preview-classe">Inflação</span>
+        <span class="xp-preview-val">R$ 9.737,09</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="11">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="11" checked="">
+        <span class="xp-preview-nome" title="Trend Ntn - B 2035 Xp Seg Prev Fic Firf">Trend Ntn - B 2035 Xp Seg Prev Fic Firf</span>
+        <span class="xp-preview-classe">Inflação</span>
+        <span class="xp-preview-val">R$ 39.844,71</span>
+      </div>
+    
+  
+    <div class="xp-preview-group">Prefixado (3)</div>
+    
+      <div class="xp-preview-item" data-idx="12">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="12" checked="">
+        <span class="xp-preview-nome" title="CDB BMG - ABR/2027 - 14,48%">CDB BMG - ABR/2027 - 14,48%</span>
+        <span class="xp-preview-classe">Prefixado</span>
+        <span class="xp-preview-val">R$ 2.673,57</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="13">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="13" checked="">
+        <span class="xp-preview-nome" title="CDB PICPAY - JUL/2027 - 13,45%">CDB PICPAY - JUL/2027 - 13,45%</span>
+        <span class="xp-preview-classe">Prefixado</span>
+        <span class="xp-preview-val">R$ 10.518,78</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="14">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="14" checked="">
+        <span class="xp-preview-nome" title="CDB PICPAY - MAI/2028 - 14,97%">CDB PICPAY - MAI/2028 - 14,97%</span>
+        <span class="xp-preview-classe">Prefixado</span>
+        <span class="xp-preview-val">R$ 1.016,75</span>
+      </div>
+    
+  
+    <div class="xp-preview-group">Multimercado (1)</div>
+    
+      <div class="xp-preview-item" data-idx="15">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="15" checked="">
+        <span class="xp-preview-nome" title="Kapitalo K10 Global Prev Xp Seg Advisory Fic Fim Rl">Kapitalo K10 Global Prev Xp Seg Advisory Fic Fim Rl</span>
+        <span class="xp-preview-classe">Multimercado</span>
+        <span class="xp-preview-val">R$ 39.269,04</span>
+      </div>
+    
+  
+    <div class="xp-preview-group">Renda Variável (2)</div>
+    
+      <div class="xp-preview-item" data-idx="16">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="16" checked="">
+        <span class="xp-preview-nome" title="Real Investor FIC de FIF em Ações RL">Real Investor FIC de FIF em Ações RL</span>
+        <span class="xp-preview-classe">Renda Variável</span>
+        <span class="xp-preview-val">R$ 8.228,33</span>
+      </div>
+    
+      <div class="xp-preview-item" data-idx="17">
+        <input type="checkbox" class="xp-check xp-item-check" data-idx="17" checked="">
+        <span class="xp-preview-nome" title="Tarpon GT 90 FIF FIA">Tarpon GT 90 FIF FIA</span>
+        <span class="xp-preview-classe">Renda Variável</span>
+        <span class="xp-preview-val">R$ 15.048,84</span>
+      </div>
+    
+  </div>
       <label class="xp-merge-opt">
-        <input type="checkbox" id="xpMergeCheck" checked>
+        <input type="checkbox" id="xpMergeCheck" checked="">
         Manter ativos já cadastrados (não limpar lista)
       </label>
     </div>
 
     <div class="xp-modal-actions">
       <button class="xp-btn xp-btn-cancel" onclick="fecharXpModal()">Cancelar</button>
-      <button class="xp-btn xp-btn-import" id="xpImportBtn" onclick="xpConfirmarImport()" disabled>Importar ativos</button>
+      <button class="xp-btn xp-btn-import" id="xpImportBtn" onclick="xpConfirmarImport()">Importar ativos</button>
     </div>
   </div>
 </div>
@@ -2411,4 +2529,4 @@ function xpToast(msg) {
   t._timer = setTimeout(() => { t.style.opacity = '0'; }, 3000);
 }
 </script>
-</body></html>
+<div id="xpToast" style="position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--bg2); border: 1px solid var(--green); color: var(--green); padding: 10px 20px; border-radius: 10px; font-size: 13px; font-weight: 600; z-index: 99999; box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px; transition: opacity 0.3s; pointer-events: none; opacity: 0;">✓ 18 ativos importados do XPerformance</div></body></html>
