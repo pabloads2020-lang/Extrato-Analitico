@@ -712,7 +712,7 @@ body.light .get-key-btn{color:#1a56db}
       <span class="material-symbols-outlined">open_in_new</span>
       <span>Nova aba</span>
     </button>
-    <span class="hub-clock" id="hubClock">ter., 14 de jul. de 2026 · 09:25:52</span>
+    <span class="hub-clock" id="hubClock">qua., 15 de jul. de 2026 · 22:12:11</span>
     <button class="hub-theme-btn" id="hubThemeBtn"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg></button>
   </div>
 </div>
@@ -885,7 +885,7 @@ const CARTEIRAS = {
       {
         "nome": "LCI/LCA - até 1 ano - 92% CDI",
         "classe": "Pós-fixado",
-        "peso": 20
+        "peso": 12
       },
       {
         "nome": "Valora Vanguard FIC de FIDC RL",
@@ -896,8 +896,15 @@ const CARTEIRAS = {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
         "classe": "Pós-fixado",
         "peso": 11
+      },
+      {
+        "nome": "Icatu Vanguarda Absoluto FIF CI RF RL",
+        "classe": "Pós-fixado",
+        "peso": 8,
+        "link": "https://maisretorno.com/fundo/icatu-vanguarda-absoluto-fif-classe-investimento-rf-cp-rl"
       }
-    ]
+    ],
+    "previdencia": []
   },
   "Moderado": {
     "classes": {
@@ -919,7 +926,7 @@ const CARTEIRAS = {
       {
         "nome": "ARX Fuji FIC de FIF RF CP RL",
         "classe": "Pós-fixado",
-        "peso": 13
+        "peso": 10.5
       },
       {
         "nome": "SulAmérica Crédito Ativo FIRF CP LP",
@@ -929,12 +936,12 @@ const CARTEIRAS = {
       {
         "nome": "Compass Yield 30 FIF RF CP LP RL",
         "classe": "Pós-fixado",
-        "peso": 8
+        "peso": 5
       },
       {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
         "classe": "Pós-fixado",
-        "peso": 14
+        "peso": 9
       },
       {
         "nome": "Valora Vanguard FIC de FIDC RL",
@@ -942,14 +949,9 @@ const CARTEIRAS = {
         "peso": 7
       },
       {
-        "nome": "Trend Inflação Geral FIRF LP",
-        "classe": "Inflação",
-        "peso": 4
-      },
-      {
         "nome": "NTN-B de 10 a 15 anos",
         "classe": "Inflação",
-        "peso": 10
+        "peso": 12
       },
       {
         "nome": "ACE Capital Advisory FIC FIM",
@@ -974,7 +976,7 @@ const CARTEIRAS = {
       {
         "nome": "Itaú Debêntures Incentivadas FIF CIC em Infra RF CP RL",
         "classe": "Inflação",
-        "peso": 6,
+        "peso": 8,
         "link": null
       },
       {
@@ -982,6 +984,12 @@ const CARTEIRAS = {
         "classe": "Multimercado",
         "peso": 2.5,
         "link": null
+      },
+      {
+        "nome": "Icatu Vanguarda Absoluto FIF CI RF RL",
+        "classe": "Pós-fixado",
+        "peso": 8,
+        "link": "https://maisretorno.com/fundo/icatu-vanguarda-absoluto-fif-classe-investimento-rf-cp-rl"
       }
     ]
   },
@@ -1008,11 +1016,6 @@ const CARTEIRAS = {
         "peso": 8
       },
       {
-        "nome": "ARX Fuji FIC de FIF RF CP RL",
-        "classe": "Pós-fixado",
-        "peso": 8
-      },
-      {
         "nome": "Valora Vanguard FIC de FIDC RL",
         "classe": "Pós-fixado",
         "peso": 10
@@ -1025,7 +1028,7 @@ const CARTEIRAS = {
       {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
         "classe": "Pós-fixado",
-        "peso": 10
+        "peso": 8
       },
       {
         "nome": "NTN-B de 10 a 15 anos",
@@ -1061,8 +1064,14 @@ const CARTEIRAS = {
       {
         "nome": "Jubarte Migration II FIC FIM",
         "classe": "Multimercado",
-        "peso": 2.5,
+        "peso": 3,
         "link": null
+      },
+      {
+        "nome": "Icatu Vanguarda Absoluto FIF CI RF RL",
+        "classe": "Pós-fixado",
+        "peso": 7,
+        "link": "https://maisretorno.com/fundo/icatu-vanguarda-absoluto-fif-classe-investimento-rf-cp-rl"
       }
     ]
   }
@@ -1153,7 +1162,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
       <input class="ed-senha-input" id="edSenhaInput" type="password" placeholder="Senha">
       <button class="ed-eye" id="edEyeBtn"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
     </div>
-    <div class="ed-senha-err" id="edSenhaErr" style="display: none;">Senha incorreta. Tente novamente.</div>
+    <div class="ed-senha-err" id="edSenhaErr" style="display: block;">Senha incorreta. Tente novamente.</div>
     <div class="ed-senha-btns">
       <button class="ed-btn-cancel" id="edBtnCancelar">Cancelar</button>
       <button class="ed-btn-enter" id="edBtnEntrar">Entrar</button>
@@ -1300,7 +1309,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="ARX Fuji FIC de FIF RF CP RL" data-action="nome" data-idx="2" data-prev="0">
+            <input class="ed-input" type="text" value="Valora Vanguard FIC de FIDC RL" data-action="nome" data-idx="2" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1315,7 +1324,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="2" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="2" data-prev="0">
           </div>
         </div>
       </div>
@@ -1331,7 +1340,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Valora Vanguard FIC de FIDC RL" data-action="nome" data-idx="3" data-prev="0">
+            <input class="ed-input" type="text" value="SulAmérica Crédito Ativo FIRF CP LP" data-action="nome" data-idx="3" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1362,7 +1371,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="SulAmérica Crédito Ativo FIRF CP LP" data-action="nome" data-idx="4" data-prev="0">
+            <input class="ed-input" type="text" value="XP Liquidez FIC RF REF DI CP RL" data-action="nome" data-idx="4" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1377,7 +1386,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="4" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="4" data-prev="0">
           </div>
         </div>
       </div>
@@ -1393,7 +1402,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="XP Liquidez FIC RF REF DI CP RL" data-action="nome" data-idx="5" data-prev="0">
+            <input class="ed-input" type="text" value="NTN-B de 10 a 15 anos" data-action="nome" data-idx="5" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1403,12 +1412,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="5" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="5" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="16" data-action="peso" data-idx="5" data-prev="0">
           </div>
         </div>
       </div>
@@ -1424,7 +1433,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="NTN-B 2035" data-action="nome" data-idx="6" data-prev="0">
+            <input class="ed-input" type="text" value="ACE Capital Advisory FIC FIM" data-action="nome" data-idx="6" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1434,12 +1443,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="6" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado" selected="">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="16" data-action="peso" data-idx="6" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="6" data-prev="0">
           </div>
         </div>
       </div>
@@ -1455,7 +1464,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="ACE Capital Advisory FIC FIM" data-action="nome" data-idx="7" data-prev="0">
+            <input class="ed-input" type="text" value="Kapitalo K10 Advisory FIC FIM" data-action="nome" data-idx="7" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1486,7 +1495,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Kapitalo K10 Advisory FIC FIM" data-action="nome" data-idx="8" data-prev="0">
+            <input class="ed-input" type="text" value="Real Investor FIC FIA BDR Nível I" data-action="nome" data-idx="8" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1496,12 +1505,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="8" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado" selected="">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável" selected="">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="8" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="5" data-action="peso" data-idx="8" data-prev="0">
           </div>
         </div>
       </div>
@@ -1517,7 +1526,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Real Investor FIC FIA BDR Nível I" data-action="nome" data-idx="9" data-prev="0">
+            <input class="ed-input" type="text" value="NDIV11 / NSDV11" data-action="nome" data-idx="9" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1548,7 +1557,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="NDIV11 / NSDV11" data-action="nome" data-idx="10" data-prev="0">
+            <input class="ed-input" type="text" value="JURO11" data-action="nome" data-idx="10" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1558,12 +1567,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="10" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável" selected="">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="5" data-action="peso" data-idx="10" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="10" data-prev="0">
           </div>
         </div>
       </div>
@@ -1579,7 +1588,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="JURO11" data-action="nome" data-idx="11" data-prev="0">
+            <input class="ed-input" type="text" value="Jubarte Migration II FIC FIM" data-action="nome" data-idx="11" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1589,12 +1598,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="11" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação" selected="">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado" selected="">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="11" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="11" data-prev="0">
           </div>
         </div>
       </div>
@@ -1610,7 +1619,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Jubarte Migration II FIC FIM" data-action="nome" data-idx="12" data-prev="0">
+            <input class="ed-input" type="text" value="Icatu Vanguarda Absoluto FIF CI RF RL" data-action="nome" data-idx="12" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
@@ -1620,12 +1629,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="12" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado" selected="">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="12" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="0" data-action="peso" data-idx="12" data-prev="0">
           </div>
         </div>
       </div></div>
