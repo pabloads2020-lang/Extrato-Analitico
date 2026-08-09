@@ -1732,13 +1732,29 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
     const icons={Conservador:'<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>',Moderado:'<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v18M2 8l3 7a3 3 0 006 0l-3-7H2zM13 8l3 7a3 3 0 006 0l-3-7h-6z"></path></svg>',Agressivo:'<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 17l5-5-5-5M12 19h8"></path></svg>'};
     elPerfilRow.innerHTML = Object.keys(CARTEIRAS).map(p=>
       `<button class="ed-perfil-btn${p===edPerfil?' ativo':''}" data-p="${p}">${icons[p]||''}${p}</button>`
-    ).join('');
+    ).join('') + `<button class="ed-add-btn gold" id="edBtnAddPerfil" style="align-self:center">+ Nova carteira</button>`;
     elPerfilRow.querySelectorAll('.ed-perfil-btn').forEach(btn=>{
       btn.addEventListener('click', function(){
         edPerfil = this.dataset.p;
         renderTudo();
       });
     });
+    const btnAddPerfil = document.getElementById('edBtnAddPerfil');
+    if (btnAddPerfil) btnAddPerfil.addEventListener('click', adicionarPerfil);
+  }
+
+  function adicionarPerfil(){
+    const nome = prompt('Nome da nova carteira (ex: Arrojado):');
+    if (!nome) return;
+    const nomeTrim = nome.trim();
+    if (!nomeTrim) return;
+    if (CARTEIRAS[nomeTrim]) { alert('Já existe uma carteira com esse nome.'); return; }
+    const classesVazias = {};
+    CLASSES_ORDER.forEach(c => classesVazias[c] = 0);
+    CARTEIRAS[nomeTrim] = { classes: classesVazias, ativos: [], previdencia: [] };
+    edPerfil = nomeTrim;
+    renderTudo();
+    renderPerfilSelector();
   }
 
   // ── CLASSES ───────────────────────────────────
