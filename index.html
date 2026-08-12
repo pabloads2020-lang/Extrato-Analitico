@@ -717,7 +717,7 @@ body.light .get-key-btn{color:#1a56db}
       <span class="material-symbols-outlined">open_in_new</span>
       <span>Nova aba</span>
     </button>
-    <span class="hub-clock" id="hubClock">qua., 15 de jul. de 2026 · 22:12:11</span>
+    <span class="hub-clock" id="hubClock">qua., 12 de ago. de 2026 · 15:57:36</span>
     <button class="hub-theme-btn" id="hubThemeBtn"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg></button>
   </div>
 </div>
@@ -849,8 +849,8 @@ body.light .get-key-btn{color:#1a56db}
 const CARTEIRAS = {
   "Conservador": {
     "classes": {
-      "Prefixado": 15,
-      "Pós-fixado": 85,
+      "Prefixado": 10,
+      "Pós-fixado": 90,
       "Inflação": 0,
       "Multimercado": 0,
       "Renda Variável": 0,
@@ -862,7 +862,7 @@ const CARTEIRAS = {
       {
         "nome": "CDB 2 anos / LCI e LCA #feed #pré",
         "classe": "Prefixado",
-        "peso": 15
+        "peso": 10
       },
       {
         "nome": "ARX Fuji FIC de FIF RF CP RL",
@@ -897,33 +897,39 @@ const CARTEIRAS = {
       {
         "nome": "Icatu Vanguarda Absoluto FIF CI RF RL",
         "classe": "Pós-fixado",
-        "peso": 8,
+        "peso": 10,
         "link": "https://maisretorno.com/fundo/icatu-vanguarda-absoluto-fif-classe-investimento-rf-cp-rl"
+      },
+      {
+        "nome": "Bradesco Ultra II FIF CIC RF CP LP RL",
+        "classe": "Pós-fixado",
+        "peso": 3,
+        "link": "https://maisretorno.com/fundo/bradesco-ultra-ii-fif-cic-rf-cp-lp-rl"
       }
     ],
     "previdencia": []
   },
   "Moderado": {
     "classes": {
-      "Prefixado": 13,
-      "Pós-fixado": 53.5,
+      "Prefixado": 10,
+      "Pós-fixado": 54,
       "Inflação": 20,
-      "Multimercado": 7.5,
+      "Multimercado": 3,
       "Renda Variável": 6,
       "Renda Fixa Global": 0,
-      "Renda Variável Global": 0,
+      "Renda Variável Global": 7,
       "Caixa": 0
     },
     "ativos": [
       {
         "nome": "CDB 2 anos / LCI e LCA #feed #pré",
         "classe": "Prefixado",
-        "peso": 13
+        "peso": 10
       },
       {
         "nome": "ARX Fuji FIC de FIF RF CP RL",
         "classe": "Pós-fixado",
-        "peso": 10.5
+        "peso": 11
       },
       {
         "nome": "SulAmérica Crédito Ativo FIRF CP LP",
@@ -953,12 +959,12 @@ const CARTEIRAS = {
       {
         "nome": "ACE Capital Advisory FIC FIM",
         "classe": "Multimercado",
-        "peso": 2.5
+        "peso": 1
       },
       {
         "nome": "Kapitalo K10 Advisory FIC FIM",
         "classe": "Multimercado",
-        "peso": 2.5
+        "peso": 1
       },
       {
         "nome": "Real Investor FIC FIA BDR Nível I",
@@ -979,7 +985,7 @@ const CARTEIRAS = {
       {
         "nome": "Jubarte Migration II FIC FIM",
         "classe": "Multimercado",
-        "peso": 2.5,
+        "peso": 1,
         "link": null
       },
       {
@@ -987,25 +993,31 @@ const CARTEIRAS = {
         "classe": "Pós-fixado",
         "peso": 8,
         "link": "https://maisretorno.com/fundo/icatu-vanguarda-absoluto-fif-classe-investimento-rf-cp-rl"
+      },
+      {
+        "nome": "Trend S&P 500 BRL CIA RL",
+        "classe": "Renda Variável Global",
+        "peso": 7,
+        "link": "https://maisretorno.com/fundo/trend-sp-500-brl-classe-investimento-acoes-rl"
       }
     ]
   },
   "Agressivo": {
     "classes": {
-      "Prefixado": 15,
+      "Prefixado": 10,
       "Pós-fixado": 43,
       "Inflação": 24,
-      "Multimercado": 8,
+      "Multimercado": 3,
       "Renda Variável": 10,
       "Renda Fixa Global": 0,
-      "Renda Variável Global": 0,
+      "Renda Variável Global": 10,
       "Caixa": 0
     },
     "ativos": [
       {
         "nome": "CDB 2 anos / LCI e LCA #feed #pré",
         "classe": "Prefixado",
-        "peso": 15
+        "peso": 10
       },
       {
         "nome": "Compass Yield 30 FIF RF CP LP RL",
@@ -1035,12 +1047,12 @@ const CARTEIRAS = {
       {
         "nome": "ACE Capital Advisory FIC FIM",
         "classe": "Multimercado",
-        "peso": 2.5
+        "peso": 1
       },
       {
         "nome": "Kapitalo K10 Advisory FIC FIM",
         "classe": "Multimercado",
-        "peso": 2.5
+        "peso": 1
       },
       {
         "nome": "Real Investor FIC FIA BDR Nível I",
@@ -1061,7 +1073,7 @@ const CARTEIRAS = {
       {
         "nome": "Jubarte Migration II FIC FIM",
         "classe": "Multimercado",
-        "peso": 3,
+        "peso": 1,
         "link": null
       },
       {
@@ -1069,6 +1081,12 @@ const CARTEIRAS = {
         "classe": "Pós-fixado",
         "peso": 7,
         "link": "https://maisretorno.com/fundo/icatu-vanguarda-absoluto-fif-classe-investimento-rf-cp-rl"
+      },
+      {
+        "nome": "Trend S&P 500 BRL CIA RL",
+        "classe": "Renda Variável Global",
+        "peso": 10,
+        "link": "https://maisretorno.com/fundo/trend-sp-500-brl-classe-investimento-acoes-rl"
       }
     ]
   }
@@ -1159,7 +1177,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
       <input class="ed-senha-input" id="edSenhaInput" type="password" placeholder="Senha">
       <button class="ed-eye" id="edEyeBtn"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
     </div>
-    <div class="ed-senha-err" id="edSenhaErr" style="display: block;">Senha incorreta. Tente novamente.</div>
+    <div class="ed-senha-err" id="edSenhaErr" style="display: none;">Senha incorreta. Tente novamente.</div>
     <div class="ed-senha-btns">
       <button class="ed-btn-cancel" id="edBtnCancelar">Cancelar</button>
       <button class="ed-btn-enter" id="edBtnEntrar">Entrar</button>
@@ -1184,7 +1202,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
   </div>
   <div class="ed-body">
     <div class="ed-info">Edite e clique em <strong>Exportar HTML</strong> para salvar. As mudanças refletem no analisador em tempo real.</div>
-    <div class="ed-perfil-row" id="edPerfilRow"><button class="ed-perfil-btn" data-p="Conservador"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Conservador</button><button class="ed-perfil-btn" data-p="Moderado"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v18M2 8l3 7a3 3 0 006 0l-3-7H2zM13 8l3 7a3 3 0 006 0l-3-7h-6z"></path></svg>Moderado</button><button class="ed-perfil-btn ativo" data-p="Agressivo"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 17l5-5-5-5M12 19h8"></path></svg>Agressivo</button></div>
+    <div class="ed-perfil-row" id="edPerfilRow"><button class="ed-perfil-btn" data-p="Conservador"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Conservador</button><button class="ed-perfil-btn" data-p="Moderado"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v18M2 8l3 7a3 3 0 006 0l-3-7H2zM13 8l3 7a3 3 0 006 0l-3-7h-6z"></path></svg>Moderado</button><button class="ed-perfil-btn ativo" data-p="Agressivo"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 17l5-5-5-5M12 19h8"></path></svg>Agressivo</button><button class="ed-add-btn gold" id="edBtnAddPerfil" style="align-self:center">+ Nova carteira</button></div>
     <div class="ed-sec" style="margin-bottom:.5rem">Alocação por classe (%)</div>
     <div class="ed-classes-grid" id="edClassesGrid">
       <div class="ed-class-row">
@@ -1259,7 +1277,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="15" data-action="peso" data-idx="0" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="0" data-prev="0">
           </div>
         </div>
       </div>
@@ -1445,7 +1463,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="6" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="1" data-action="peso" data-idx="6" data-prev="0">
           </div>
         </div>
       </div>
@@ -1476,7 +1494,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="7" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="1" data-action="peso" data-idx="7" data-prev="0">
           </div>
         </div>
       </div>
@@ -1600,7 +1618,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="2.5" data-action="peso" data-idx="11" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="1" data-action="peso" data-idx="11" data-prev="0">
           </div>
         </div>
       </div>
@@ -1620,7 +1638,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
-            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="12" data-prev="0">
+            <input class="ed-input" type="text" value="https://maisretorno.com/fundo/icatu-vanguarda-absoluto-fif-classe-investimento-rf-cp-rl" placeholder="https://..." data-action="link" data-idx="12" data-prev="0">
           </div>
         <div class="ed-grid2">
           <div class="ed-field">
@@ -1631,7 +1649,38 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="0" data-action="peso" data-idx="12" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="7" data-action="peso" data-idx="12" data-prev="0">
+          </div>
+        </div>
+      </div>
+      <div class="ed-ativo-card">
+        <div class="ed-ativo-top">
+          <div class="ed-ativo-tags">
+            
+            
+            <button class="ed-btn ed-btn-tog" data-action="tomulti" data-idx="13" data-prev="0">+ 2º ativo</button>
+          </div>
+          <button class="ed-btn ed-btn-del" data-action="del" data-idx="13" data-prev="0"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:-1px;margin-right:3px"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6"></path></svg>remover</button>
+        </div>
+        
+          <div class="ed-field">
+            <div class="ed-field-lbl">Nome</div>
+            <input class="ed-input" type="text" value="Novo ativo" data-action="nome" data-idx="13" data-prev="0">
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Link (opcional)</div>
+            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="13" data-prev="0">
+          </div>
+        <div class="ed-grid2">
+          <div class="ed-field">
+            <div class="ed-field-lbl">Classe</div>
+            <select class="ed-input ed-select" data-action="classe" data-idx="13" data-prev="0">
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+            </select>
+          </div>
+          <div class="ed-field">
+            <div class="ed-field-lbl">Peso (%)</div>
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="0" data-action="peso" data-idx="13" data-prev="0">
           </div>
         </div>
       </div></div>
