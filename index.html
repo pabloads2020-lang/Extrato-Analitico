@@ -874,7 +874,7 @@ body.light .get-key-btn{color:#1a56db}
       </div>
       <div class="identity-stat">
         <span class="identity-stat-lbl">Aporte / caixa adicional</span>
-        <input class="identity-stat-input-el mono-num" id="aporteInput" type="text" placeholder="0,00" inputmode="numeric" oninput="formatarMoeda(this)">
+        <input class="identity-stat-input-el mono-num" id="aporteInput" type="text" placeholder="0,00" inputmode="numeric" autocomplete="off" oninput="formatarMoeda(this)">
       </div>
     </div>
     <div class="identity-right">
@@ -907,7 +907,7 @@ body.light .get-key-btn{color:#1a56db}
         <div class="apikey-desc">Necessária para a análise inteligente. Fica salva só nesta aba.</div>
       </div>
       <div class="apikey-input-wrap">
-        <input class="apikey-input ok" id="apikeyInput" type="password" placeholder="Cole sua chave aqui (AIza...)">
+        <input class="apikey-input ok" id="apikeyInput" type="password" placeholder="Cole sua chave aqui (AIza...)" autocomplete="new-password">
         <button class="apikey-toggle" id="apikeyToggle" title="Mostrar/ocultar"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
         <span class="apikey-status set" id="apikeyStatus">✓ Chave definida</span>
       </div>
@@ -1349,7 +1349,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
     <div class="ed-senha-title">Área restrita</div>
     <div class="ed-senha-sub">Digite a senha para editar as carteiras recomendadas</div>
     <div class="ed-senha-wrap">
-      <input class="ed-senha-input" id="edSenhaInput" type="password" placeholder="Senha">
+      <input class="ed-senha-input" id="edSenhaInput" type="password" placeholder="Senha" autocomplete="new-password">
       <button class="ed-eye" id="edEyeBtn"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
     </div>
     <div class="ed-senha-err" id="edSenhaErr" style="display: none;">Senha incorreta. Tente novamente.</div>
