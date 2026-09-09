@@ -867,7 +867,7 @@ body.light .get-key-btn{color:#1a56db}
     <button class="hub-newtab-btn" id="hubNewTabBtn">
       <span>Nova aba</span>
     </button>
-    <span class="hub-clock" id="hubClock">qua., 12 de ago. de 2026 · 15:57:36</span>
+    <span class="hub-clock" id="hubClock">qua., 09 de set. de 2026 · 09:57:16</span>
     <button class="hub-theme-btn" id="hubThemeBtn" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
       <div class="hub-theme-knob"></div>
     </button>
@@ -916,7 +916,7 @@ body.light .get-key-btn{color:#1a56db}
   </div>
 
   <!-- API KEY (popover, aberto pelo botão de chave na identity bar) -->
-  <div class="apikey-popover" id="apikeyPopover" hidden>
+  <div class="apikey-popover" id="apikeyPopover" hidden="">
     <div class="apikey-card">
       <div class="apikey-left">
         <div class="apikey-title">
@@ -945,7 +945,7 @@ body.light .get-key-btn{color:#1a56db}
     <span class="workspace-heading-item" data-page="1"><span class="stage-num">02</span>Resultado da análise</span>
   </div>
   <div class="workspace-shell">
-    <button class="ws-arrow ws-arrow-prev" id="wsPrev" title="Ver ativos" hidden>
+    <button class="ws-arrow ws-arrow-prev" id="wsPrev" title="Ver ativos" hidden="">
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path></svg>
     </button>
     <div class="workspace" id="workspace">
@@ -976,9 +976,9 @@ body.light .get-key-btn{color:#1a56db}
 
         <aside class="workspace-page results-col">
           <!-- Elementos do gauge de aderência: guardados aqui, ocultos, até decidirmos onde exibi-los -->
-          <div hidden id="gaugeStash">
-            <svg viewBox="0 0 140 140"><circle class="gauge-fill" id="gaugeFill" cx="70" cy="70" r="58"></circle></svg>
-            <span id="gaugeValue"></span>
+          <div hidden="" id="gaugeStash">
+            <svg viewBox="0 0 140 140"><circle class="gauge-fill" id="gaugeFill" cx="70" cy="70" r="58" style="stroke-dasharray: 364.425px; stroke-dashoffset: 364.425px;"></circle></svg>
+            <span id="gaugeValue">—</span>
             <p id="gaugeHint"></p>
           </div>
 
@@ -1056,12 +1056,12 @@ const CARTEIRAS = {
       {
         "nome": "ARX Fuji FIC de FIF RF CP RL",
         "classe": "Pós-fixado",
-        "peso": 15
+        "peso": 10
       },
       {
         "nome": "SulAmérica Crédito Ativo FIRF CP LP",
         "classe": "Pós-fixado",
-        "peso": 24
+        "peso": 26.5
       },
       {
         "nome": "Compass Yield 30 FIF RF CP LP RL",
@@ -1086,14 +1086,8 @@ const CARTEIRAS = {
       {
         "nome": "Icatu Vanguarda Absoluto FIF CI RF RL",
         "classe": "Pós-fixado",
-        "peso": 10,
+        "peso": 15.5,
         "link": "https://maisretorno.com/fundo/icatu-vanguarda-absoluto-fif-classe-investimento-rf-cp-rl"
-      },
-      {
-        "nome": "Bradesco Ultra II FIF CIC RF CP LP RL",
-        "classe": "Pós-fixado",
-        "peso": 3,
-        "link": "https://maisretorno.com/fundo/bradesco-ultra-ii-fif-cic-rf-cp-lp-rl"
       }
     ],
     "previdencia": []
@@ -1104,9 +1098,9 @@ const CARTEIRAS = {
       "Pós-fixado": 54,
       "Inflação": 20,
       "Multimercado": 3,
-      "Renda Variável": 6,
+      "Renda Variável": 5,
       "Renda Fixa Global": 0,
-      "Renda Variável Global": 7,
+      "Renda Variável Global": 8,
       "Caixa": 0
     },
     "ativos": [
@@ -1118,7 +1112,7 @@ const CARTEIRAS = {
       {
         "nome": "ARX Fuji FIC de FIF RF CP RL",
         "classe": "Pós-fixado",
-        "peso": 11
+        "peso": 8
       },
       {
         "nome": "SulAmérica Crédito Ativo FIRF CP LP",
@@ -1128,7 +1122,7 @@ const CARTEIRAS = {
       {
         "nome": "Compass Yield 30 FIF RF CP LP RL",
         "classe": "Pós-fixado",
-        "peso": 5
+        "peso": 8
       },
       {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
@@ -1158,12 +1152,12 @@ const CARTEIRAS = {
       {
         "nome": "Real Investor FIC FIA BDR Nível I",
         "classe": "Renda Variável",
-        "peso": 3
+        "peso": 2.5
       },
       {
         "nome": "NDIV11 / NSDV11",
         "classe": "Renda Variável",
-        "peso": 3
+        "peso": 2.5
       },
       {
         "nome": "Itaú Debêntures Incentivadas FIF CIC em Infra RF CP RL",
@@ -1186,27 +1180,27 @@ const CARTEIRAS = {
       {
         "nome": "Trend S&P 500 BRL CIA RL",
         "classe": "Renda Variável Global",
-        "peso": 7,
+        "peso": 8,
         "link": "https://maisretorno.com/fundo/trend-sp-500-brl-classe-investimento-acoes-rl"
       }
     ]
   },
   "Agressivo": {
     "classes": {
-      "Prefixado": 10,
-      "Pós-fixado": 43,
+      "Prefixado": 12,
+      "Pós-fixado": 41,
       "Inflação": 24,
       "Multimercado": 3,
-      "Renda Variável": 10,
+      "Renda Variável": 7,
       "Renda Fixa Global": 0,
-      "Renda Variável Global": 10,
+      "Renda Variável Global": 13,
       "Caixa": 0
     },
     "ativos": [
       {
         "nome": "CDB 2 anos / LCI e LCA #feed #pré",
         "classe": "Prefixado",
-        "peso": 10
+        "peso": 12
       },
       {
         "nome": "Compass Yield 30 FIF RF CP LP RL",
@@ -1226,7 +1220,7 @@ const CARTEIRAS = {
       {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
         "classe": "Pós-fixado",
-        "peso": 8
+        "peso": 6
       },
       {
         "nome": "NTN-B de 10 a 15 anos",
@@ -1246,12 +1240,12 @@ const CARTEIRAS = {
       {
         "nome": "Real Investor FIC FIA BDR Nível I",
         "classe": "Renda Variável",
-        "peso": 5
+        "peso": 3.5
       },
       {
         "nome": "NDIV11 / NSDV11",
         "classe": "Renda Variável",
-        "peso": 5
+        "peso": 3.5
       },
       {
         "nome": "JURO11",
@@ -1274,7 +1268,7 @@ const CARTEIRAS = {
       {
         "nome": "Trend S&P 500 BRL CIA RL",
         "classe": "Renda Variável Global",
-        "peso": 10,
+        "peso": 13,
         "link": "https://maisretorno.com/fundo/trend-sp-500-brl-classe-investimento-acoes-rl"
       }
     ]
@@ -1405,7 +1399,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
     <div class="ed-classes-grid" id="edClassesGrid">
       <div class="ed-class-row">
         <span class="ed-class-label">Prefixado</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="15" data-cls="Prefixado">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="10" data-cls="Prefixado">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
@@ -1420,7 +1414,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Multimercado</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="8" data-cls="Multimercado">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="3" data-cls="Multimercado">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
@@ -1435,7 +1429,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Renda Variável Global</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="0" data-cls="Renda Variável Global">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="10" data-cls="Renda Variável Global">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
@@ -1863,22 +1857,22 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
         
           <div class="ed-field">
             <div class="ed-field-lbl">Nome</div>
-            <input class="ed-input" type="text" value="Novo ativo" data-action="nome" data-idx="13" data-prev="0">
+            <input class="ed-input" type="text" value="Trend S&amp;P 500 BRL CIA RL" data-action="nome" data-idx="13" data-prev="0">
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Link (opcional)</div>
-            <input class="ed-input" type="text" value="" placeholder="https://..." data-action="link" data-idx="13" data-prev="0">
+            <input class="ed-input" type="text" value="https://maisretorno.com/fundo/trend-sp-500-brl-classe-investimento-acoes-rl" placeholder="https://..." data-action="link" data-idx="13" data-prev="0">
           </div>
         <div class="ed-grid2">
           <div class="ed-field">
             <div class="ed-field-lbl">Classe</div>
             <select class="ed-input ed-select" data-action="classe" data-idx="13" data-prev="0">
-              <option value="Prefixado">Prefixado</option><option value="Pós-fixado" selected="">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global">Renda Variável Global</option><option value="Caixa">Caixa</option>
+              <option value="Prefixado">Prefixado</option><option value="Pós-fixado">Pós-fixado</option><option value="Inflação">Inflação</option><option value="Multimercado">Multimercado</option><option value="Renda Variável">Renda Variável</option><option value="Renda Fixa Global">Renda Fixa Global</option><option value="Renda Variável Global" selected="">Renda Variável Global</option><option value="Caixa">Caixa</option>
             </select>
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="0" data-action="peso" data-idx="13" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="13" data-prev="0">
           </div>
         </div>
       </div></div>
