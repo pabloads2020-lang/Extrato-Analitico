@@ -867,7 +867,7 @@ body.light .get-key-btn{color:#1a56db}
     <button class="hub-newtab-btn" id="hubNewTabBtn">
       <span>Nova aba</span>
     </button>
-    <span class="hub-clock" id="hubClock">qua., 09 de set. de 2026 · 09:57:16</span>
+    <span class="hub-clock" id="hubClock">ter., 13 de out. de 2026 · 14:15:13</span>
     <button class="hub-theme-btn" id="hubThemeBtn" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
       <div class="hub-theme-knob"></div>
     </button>
@@ -1038,8 +1038,8 @@ body.light .get-key-btn{color:#1a56db}
 const CARTEIRAS = {
   "Conservador": {
     "classes": {
-      "Prefixado": 10,
-      "Pós-fixado": 90,
+      "Prefixado": 5,
+      "Pós-fixado": 95,
       "Inflação": 0,
       "Multimercado": 0,
       "Renda Variável": 0,
@@ -1051,7 +1051,7 @@ const CARTEIRAS = {
       {
         "nome": "CDB 2 anos / LCI e LCA #feed #pré",
         "classe": "Prefixado",
-        "peso": 10
+        "peso": 5
       },
       {
         "nome": "ARX Fuji FIC de FIF RF CP RL",
@@ -1081,7 +1081,7 @@ const CARTEIRAS = {
       {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
         "classe": "Pós-fixado",
-        "peso": 11
+        "peso": 16
       },
       {
         "nome": "Icatu Vanguarda Absoluto FIF CI RF RL",
@@ -1094,20 +1094,20 @@ const CARTEIRAS = {
   },
   "Moderado": {
     "classes": {
-      "Prefixado": 10,
-      "Pós-fixado": 54,
-      "Inflação": 20,
+      "Prefixado": 5,
+      "Pós-fixado": 60,
+      "Inflação": 16,
       "Multimercado": 3,
       "Renda Variável": 5,
       "Renda Fixa Global": 0,
-      "Renda Variável Global": 8,
+      "Renda Variável Global": 11,
       "Caixa": 0
     },
     "ativos": [
       {
         "nome": "CDB 2 anos / LCI e LCA #feed #pré",
         "classe": "Prefixado",
-        "peso": 10
+        "peso": 5
       },
       {
         "nome": "ARX Fuji FIC de FIF RF CP RL",
@@ -1127,7 +1127,7 @@ const CARTEIRAS = {
       {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
         "classe": "Pós-fixado",
-        "peso": 9
+        "peso": 15
       },
       {
         "nome": "Valora Vanguard FIC de FIDC RL",
@@ -1137,7 +1137,7 @@ const CARTEIRAS = {
       {
         "nome": "NTN-B de 10 a 15 anos",
         "classe": "Inflação",
-        "peso": 12
+        "peso": 4
       },
       {
         "nome": "ACE Capital Advisory FIC FIM",
@@ -1162,7 +1162,7 @@ const CARTEIRAS = {
       {
         "nome": "Itaú Debêntures Incentivadas FIF CIC em Infra RF CP RL",
         "classe": "Inflação",
-        "peso": 8,
+        "peso": 12,
         "link": null
       },
       {
@@ -1180,27 +1180,27 @@ const CARTEIRAS = {
       {
         "nome": "Trend S&P 500 BRL CIA RL",
         "classe": "Renda Variável Global",
-        "peso": 8,
+        "peso": 11,
         "link": "https://maisretorno.com/fundo/trend-sp-500-brl-classe-investimento-acoes-rl"
       }
     ]
   },
   "Agressivo": {
     "classes": {
-      "Prefixado": 12,
-      "Pós-fixado": 41,
-      "Inflação": 24,
+      "Prefixado": 8,
+      "Pós-fixado": 45,
+      "Inflação": 20,
       "Multimercado": 3,
       "Renda Variável": 7,
       "Renda Fixa Global": 0,
-      "Renda Variável Global": 13,
+      "Renda Variável Global": 17,
       "Caixa": 0
     },
     "ativos": [
       {
         "nome": "CDB 2 anos / LCI e LCA #feed #pré",
         "classe": "Prefixado",
-        "peso": 12
+        "peso": 8
       },
       {
         "nome": "Compass Yield 30 FIF RF CP LP RL",
@@ -1220,12 +1220,12 @@ const CARTEIRAS = {
       {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
         "classe": "Pós-fixado",
-        "peso": 6
+        "peso": 10
       },
       {
         "nome": "NTN-B de 10 a 15 anos",
         "classe": "Inflação",
-        "peso": 16
+        "peso": 8
       },
       {
         "nome": "ACE Capital Advisory FIC FIM",
@@ -1250,7 +1250,7 @@ const CARTEIRAS = {
       {
         "nome": "JURO11",
         "classe": "Inflação",
-        "peso": 8,
+        "peso": 12,
         "link": null
       },
       {
@@ -1268,7 +1268,7 @@ const CARTEIRAS = {
       {
         "nome": "Trend S&P 500 BRL CIA RL",
         "classe": "Renda Variável Global",
-        "peso": 13,
+        "peso": 17,
         "link": "https://maisretorno.com/fundo/trend-sp-500-brl-classe-investimento-acoes-rl"
       }
     ]
@@ -1399,12 +1399,12 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
     <div class="ed-classes-grid" id="edClassesGrid">
       <div class="ed-class-row">
         <span class="ed-class-label">Prefixado</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="10" data-cls="Prefixado">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="12" data-cls="Prefixado">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Pós-fixado</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="43" data-cls="Pós-fixado">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="41" data-cls="Pós-fixado">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
@@ -1419,7 +1419,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Renda Variável</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="10" data-cls="Renda Variável">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="7" data-cls="Renda Variável">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
@@ -1429,7 +1429,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Renda Variável Global</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="10" data-cls="Renda Variável Global">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="13" data-cls="Renda Variável Global">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
@@ -1469,7 +1469,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="0" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="12" data-action="peso" data-idx="0" data-prev="0">
           </div>
         </div>
       </div>
@@ -1593,7 +1593,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="4" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="6" data-action="peso" data-idx="4" data-prev="0">
           </div>
         </div>
       </div>
@@ -1717,7 +1717,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="5" data-action="peso" data-idx="8" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="3.5" data-action="peso" data-idx="8" data-prev="0">
           </div>
         </div>
       </div>
@@ -1748,7 +1748,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="5" data-action="peso" data-idx="9" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="3.5" data-action="peso" data-idx="9" data-prev="0">
           </div>
         </div>
       </div>
@@ -1872,7 +1872,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="13" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="13" data-action="peso" data-idx="13" data-prev="0">
           </div>
         </div>
       </div></div>
