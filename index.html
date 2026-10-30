@@ -2310,6 +2310,11 @@ const XP_CLASSE_MAP = {
 // Estratégias-pai reconhecidas (as que encabeçam os grupos de ativos)
 const XP_GRUPOS = Object.keys(XP_CLASSE_MAP);
 
+// Ativos cujo NOME faz referência a ouro (ex.: "Trend Ouro", "Gold FIC FIA", "GOLD11")
+// são sempre classificados como Renda Variável Global, independentemente do grupo-pai
+// em que aparecem no relatório (ex.: "Alternativo", que cairia em Renda Variável).
+const XP_OURO_REGEX = /\b(ouro|gold\d*)\b/i;
+
 let xpAtivosParsed = []; // [{nome, classe, valor}]
 let xpTab = 'file';
 
@@ -2634,7 +2639,7 @@ function xpParsearTexto(texto) {
   const vistos = new Set();
   matches.forEach(({ nome, valor, pos }) => {
     if (XP_GRUPOS.some(g => nome.toLowerCase() === g.toLowerCase())) return;
-    const classe = classeParaPosicao(pos);
+    const classe = XP_OURO_REGEX.test(nome) ? 'Renda Variável Global' : classeParaPosicao(pos);
     const chave = nome.toLowerCase() + '|' + valor.toFixed(2);
     if (vistos.has(chave)) return;
     vistos.add(chave);
