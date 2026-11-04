@@ -867,7 +867,7 @@ body.light .get-key-btn{color:#1a56db}
     <button class="hub-newtab-btn" id="hubNewTabBtn">
       <span>Nova aba</span>
     </button>
-    <span class="hub-clock" id="hubClock">ter., 13 de out. de 2026 · 14:15:13</span>
+    <span class="hub-clock" id="hubClock">qua., 04 de nov. de 2026 · 10:13:48</span>
     <button class="hub-theme-btn" id="hubThemeBtn" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
       <div class="hub-theme-knob"></div>
     </button>
@@ -1038,8 +1038,8 @@ body.light .get-key-btn{color:#1a56db}
 const CARTEIRAS = {
   "Conservador": {
     "classes": {
-      "Prefixado": 5,
-      "Pós-fixado": 95,
+      "Prefixado": 12,
+      "Pós-fixado": 88,
       "Inflação": 0,
       "Multimercado": 0,
       "Renda Variável": 0,
@@ -1051,7 +1051,7 @@ const CARTEIRAS = {
       {
         "nome": "CDB 2 anos / LCI e LCA #feed #pré",
         "classe": "Prefixado",
-        "peso": 5
+        "peso": 12
       },
       {
         "nome": "ARX Fuji FIC de FIF RF CP RL",
@@ -1061,7 +1061,7 @@ const CARTEIRAS = {
       {
         "nome": "SulAmérica Crédito Ativo FIRF CP LP",
         "classe": "Pós-fixado",
-        "peso": 26.5
+        "peso": 19.5
       },
       {
         "nome": "Compass Yield 30 FIF RF CP LP RL",
@@ -1094,11 +1094,11 @@ const CARTEIRAS = {
   },
   "Moderado": {
     "classes": {
-      "Prefixado": 5,
-      "Pós-fixado": 60,
-      "Inflação": 16,
+      "Prefixado": 14,
+      "Pós-fixado": 46,
+      "Inflação": 19,
       "Multimercado": 3,
-      "Renda Variável": 5,
+      "Renda Variável": 7,
       "Renda Fixa Global": 0,
       "Renda Variável Global": 11,
       "Caixa": 0
@@ -1107,7 +1107,7 @@ const CARTEIRAS = {
       {
         "nome": "CDB 2 anos / LCI e LCA #feed #pré",
         "classe": "Prefixado",
-        "peso": 5
+        "peso": 14
       },
       {
         "nome": "ARX Fuji FIC de FIF RF CP RL",
@@ -1117,7 +1117,7 @@ const CARTEIRAS = {
       {
         "nome": "SulAmérica Crédito Ativo FIRF CP LP",
         "classe": "Pós-fixado",
-        "peso": 14
+        "peso": 0
       },
       {
         "nome": "Compass Yield 30 FIF RF CP LP RL",
@@ -1137,7 +1137,7 @@ const CARTEIRAS = {
       {
         "nome": "NTN-B de 10 a 15 anos",
         "classe": "Inflação",
-        "peso": 4
+        "peso": 12
       },
       {
         "nome": "ACE Capital Advisory FIC FIM",
@@ -1152,17 +1152,17 @@ const CARTEIRAS = {
       {
         "nome": "Real Investor FIC FIA BDR Nível I",
         "classe": "Renda Variável",
-        "peso": 2.5
+        "peso": 3.5
       },
       {
         "nome": "NDIV11 / NSDV11",
         "classe": "Renda Variável",
-        "peso": 2.5
+        "peso": 3.5
       },
       {
         "nome": "Itaú Debêntures Incentivadas FIF CIC em Infra RF CP RL",
         "classe": "Inflação",
-        "peso": 12,
+        "peso": 7,
         "link": null
       },
       {
@@ -1187,11 +1187,11 @@ const CARTEIRAS = {
   },
   "Agressivo": {
     "classes": {
-      "Prefixado": 8,
-      "Pós-fixado": 45,
-      "Inflação": 20,
+      "Prefixado": 16,
+      "Pós-fixado": 31,
+      "Inflação": 23,
       "Multimercado": 3,
-      "Renda Variável": 7,
+      "Renda Variável": 10,
       "Renda Fixa Global": 0,
       "Renda Variável Global": 17,
       "Caixa": 0
@@ -1200,7 +1200,7 @@ const CARTEIRAS = {
       {
         "nome": "CDB 2 anos / LCI e LCA #feed #pré",
         "classe": "Prefixado",
-        "peso": 8
+        "peso": 16
       },
       {
         "nome": "Compass Yield 30 FIF RF CP LP RL",
@@ -1215,17 +1215,17 @@ const CARTEIRAS = {
       {
         "nome": "SulAmérica Crédito Ativo FIRF CP LP",
         "classe": "Pós-fixado",
-        "peso": 10
+        "peso": 0
       },
       {
         "nome": "XP Liquidez FIC RF REF DI CP RL",
         "classe": "Pós-fixado",
-        "peso": 10
+        "peso": 6
       },
       {
         "nome": "NTN-B de 10 a 15 anos",
         "classe": "Inflação",
-        "peso": 8
+        "peso": 16
       },
       {
         "nome": "ACE Capital Advisory FIC FIM",
@@ -1240,17 +1240,17 @@ const CARTEIRAS = {
       {
         "nome": "Real Investor FIC FIA BDR Nível I",
         "classe": "Renda Variável",
-        "peso": 3.5
+        "peso": 5
       },
       {
         "nome": "NDIV11 / NSDV11",
         "classe": "Renda Variável",
-        "peso": 3.5
+        "peso": 5
       },
       {
         "nome": "JURO11",
         "classe": "Inflação",
-        "peso": 12,
+        "peso": 7,
         "link": null
       },
       {
@@ -1369,7 +1369,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
       </form>
       <button class="ed-eye" id="edEyeBtn"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
     </div>
-    <div class="ed-senha-err" id="edSenhaErr" style="display: none;">Senha incorreta. Tente novamente.</div>
+    <div class="ed-senha-err" id="edSenhaErr" style="display: block;">Senha incorreta. Tente novamente.</div>
     <div class="ed-senha-btns">
       <button class="ed-btn-cancel" id="edBtnCancelar">Cancelar</button>
       <button class="ed-btn-enter" id="edBtnEntrar">Entrar</button>
@@ -1399,17 +1399,17 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
     <div class="ed-classes-grid" id="edClassesGrid">
       <div class="ed-class-row">
         <span class="ed-class-label">Prefixado</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="12" data-cls="Prefixado">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="8" data-cls="Prefixado">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Pós-fixado</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="41" data-cls="Pós-fixado">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="45" data-cls="Pós-fixado">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Inflação</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="24" data-cls="Inflação">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="20" data-cls="Inflação">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
@@ -1429,7 +1429,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
       </div>
       <div class="ed-class-row">
         <span class="ed-class-label">Renda Variável Global</span>
-        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="13" data-cls="Renda Variável Global">
+        <input class="ed-class-input" type="number" min="0" max="100" step="0.5" value="17" data-cls="Renda Variável Global">
         <span class="ed-pct-lbl">%</span>
       </div>
       <div class="ed-class-row">
@@ -1469,7 +1469,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="12" data-action="peso" data-idx="0" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="0" data-prev="0">
           </div>
         </div>
       </div>
@@ -1593,7 +1593,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="6" data-action="peso" data-idx="4" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="10" data-action="peso" data-idx="4" data-prev="0">
           </div>
         </div>
       </div>
@@ -1624,7 +1624,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="16" data-action="peso" data-idx="5" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="5" data-prev="0">
           </div>
         </div>
       </div>
@@ -1779,7 +1779,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="8" data-action="peso" data-idx="10" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="12" data-action="peso" data-idx="10" data-prev="0">
           </div>
         </div>
       </div>
@@ -1872,7 +1872,7 @@ function enterParaProximo(e,currentInput){if(e.key!=='Enter')return;e.preventDef
           </div>
           <div class="ed-field">
             <div class="ed-field-lbl">Peso (%)</div>
-            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="13" data-action="peso" data-idx="13" data-prev="0">
+            <input class="ed-input mono" type="number" min="0" max="100" step="0.5" value="17" data-action="peso" data-idx="13" data-prev="0">
           </div>
         </div>
       </div></div>
